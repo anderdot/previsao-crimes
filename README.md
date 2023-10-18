@@ -16,6 +16,9 @@ Este projeto procura analisar e desenvolver um modelo preditivo baseado em dados
 # Sobre o projeto
 Em breve...
 
+# Progresso
+- [x] Estrutura
+
 # Ferramentas utilizadas
 - [Excel](https://www.microsoft.com/pt-br/microsoft-365/excel): Utilizado para a manipulação inicial dos dados, como busca de indicadores e planejamento de construção.
 - [Documentos Google](https://www.google.com/intl/pt-BR/docs/about/): Utilizado para a criação de documentos de texto e planilhas colaborativas sobre o projeto.
@@ -33,7 +36,7 @@ Em breve...
 Em breve...
 
 # Como executar o projeto
-Clonar o projeto em sua máquina local
+1. Clonar o projeto em sua máquina local
 ```bash
 git clone https://github.com/anderdot/previsao-crimes.git
 ```

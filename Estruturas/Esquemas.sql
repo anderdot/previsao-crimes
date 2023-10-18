@@ -27,3 +27,6 @@ IF NOT EXISTS (SELECT 1 FROM [sys].[schemas] WHERE [name] = 'Depara')
 
 IF NOT EXISTS (SELECT 1 FROM [sys].[schemas] WHERE [name] = 'Registro')
     EXEC ('CREATE SCHEMA [Registro]')
+
+IF NOT EXISTS (SELECT 1 FROM [sys].[schemas] WHERE [name] = 'Consolidado')
+    EXEC ('CREATE SCHEMA [Consolidado]')
