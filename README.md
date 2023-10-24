@@ -1,7 +1,5 @@
 <h3 align="center">🚧 Em construção 🚧</h3>
-<p align="center" style="background-color:#fff;">
-    <img src="https://i.ibb.co/7nKNhLD/imagem-2023-10-22-150730887.png" alt="Logo" style="width:600px; padding-top: 10px; padding-bottom: 10px;">
-</p>
+<p><img align="center" src="https://i.ibb.co/7nKNhLD/imagem-2023-10-22-150730887.png" alt="Logo"></p>
 <p align="center">
     <!-- TCC -->
     <img alt="tcc" src="https://img.shields.io/badge/Faculdade-TCC-FFF?style=flat&labelColor=black">
@@ -90,7 +88,7 @@ Em breve...
 - [PowerShell](https://docs.microsoft.com/pt-br/powershell/scripting/overview?view=powershell-7.1): Para a execução dos scripts de limpeza e renomeação dos arquivos baixados.
     - Caso utilize o Windows, o PowerShell já vem instalado por padrão.
     - Caso utilize o Linux, instalar o [PowerShell](https://docs.microsoft.com/pt-br/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7.1) e o [PowerShell Core](https://docs.microsoft.com/pt-br/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7.1).
-    - Caso utilize o MacOS, instalar o [PowerShell](https://docs.microsoft.com/pt-br/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7.1) e o [PowerShell Core](https://docs.microsoft.com/pt-br/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7.1).</br>
+    - Caso utilize o MacOS, instalar o [PowerShell](https://docs.microsoft.com/pt-br/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7.1) e o [PowerShell Core](https://docs.microsoft.com/pt-br/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7.1).</p>
 
 Em caso de utilização de outros sistemas operacionais, será necessário alterar os scripts de banco de dados, como a listagem de arquivos por diretório.
 
@@ -109,47 +107,9 @@ No diretório de [Estrutura](https://github.com/anderdot/previsao-crimes/tree/ma
 
 # Autores
 
-<style>
-    .container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 0 auto;
-    }
-
-    .image {
-        border-radius: 50%;
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-        margin-right: 20px;
-        margin-bottom: 20px;
-    }
-
-    .text {
-        max-width: 600px;
-        text-align: justify;
-    }
-
-    @media (max-width: 600px) {
-        .container {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .image {
-            margin-right: 0;
-        }
-    }
-</style>
-
 #### Anderson Silva Araújo - [anderdot](https://github.com/anderdot)
-<div class="container">
-    <img class="image" src="https://i.ibb.co/JHKjdwh/Anderson.png" alt="Anderson">
-    <div class="text">
-        Moro no emblemático Jaçana do ilustríssimo Adoniran Barbosa, Desde a infância, nutro um entusiasmo pela tecnologia. Ingressei na ETEC de informática, onde construí uma base sólida na área me formando em 2016. Atualmente cursando o último semestre de Ciência da Computação na FMU e trabalhando como administrador de banco de dados.
-    </div>
-</div>
+<img align="left" src="https://i.ibb.co/JHKjdwh/Anderson.png" alt="Anderson">
+Moro no emblemático Jaçana do ilustríssimo Adoniran Barbosa, Desde a infância, nutro um entusiasmo pela tecnologia. Ingressei na ETEC de informática, onde construí uma base sólida na área me formando em 2016. Atualmente cursando o último semestre de Ciência da Computação na FMU e trabalhando como administrador de banco de dados.
 
 #### Cris Natsumi Hiodo Nakamura - [CrisNakamura](https://github.com/CrisNakamura)
 #### Emily Barreto da Silva - [Emily-Emy](https://github.com/Emily-Emy)
