@@ -107,14 +107,50 @@ No diretório de [Estrutura](https://github.com/anderdot/previsao-crimes/tree/ma
 
 # Autores
 
-#### Anderson Silva Araújo - [anderdot](https://github.com/anderdot)
-<img align="left" src="https://i.ibb.co/JHKjdwh/Anderson.png" alt="Anderson">
-Moro no emblemático Jaçana do ilustríssimo Adoniran Barbosa, Desde a infância, nutro um entusiasmo pela tecnologia. Ingressei na ETEC de informática, onde construí uma base sólida na área me formando em 2016. Atualmente cursando o último semestre de Ciência da Computação na FMU e trabalhando como administrador de banco de dados.
+#### Anderson Silva Araújo
+<img align="left" width="155" height="155" src="https://i.ibb.co/JHKjdwh/Anderson.png">
 
-#### Cris Natsumi Hiodo Nakamura - [CrisNakamura](https://github.com/CrisNakamura)
-#### Emily Barreto da Silva - [Emily-Emy](https://github.com/Emily-Emy)
-#### Guilherme Moreira Leocadio - [le0cadio](https://github.com/le0cadio)
-#### Phelipe Cordeiro da Silva - [PHCS94](https://github.com/PHCS94)
+Moro no emblemático Jaçana do ilustre Adoniran Barbosa. Desde a infância, nutro um entusiasmo pela tecnologia. Ingressei na ETEC de informática, onde construí uma base sólida na área, formando-me em 2016. Atualmente, estou cursando o último semestre de Ciência da Computação na FMU e trabalhando como administrador de banco de dados.<br>
+
+<a href="https://github.com/anderdot"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-FFF?style=flat&labelColor=black&color=FFF&logo=github&logoColor=FFF"></a>
+<a href="https://www.linkedin.com/in/anderdot/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-FFF?style=flat&labelColor=black&color=FFF&logo=linkedin&logoColor=FFF"></a>
+---
+
+#### Cris Natsumi Hiodo Nakamura
+<img align="left" width="155" height="155" src="https://i.ibb.co/tL7g2CF/Cris.jpg" alt="Cris">
+
+Nascida no Japão e atualmente residindo em São Paulo. Sou detalhista e sempre tive facilidade com números. Entusiasta de dados e apaixonada pelos insights que elas podem proporcionar. Tenho me especializado em análise e ciência de dados e com um "pezinho" em machine learning. No momento estou concluindo o último semestre do curso de Ciência da Computação na FMU.<br>
+
+<a href="https://github.com/CrisNakamura"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-FFF?style=flat&labelColor=black&color=FFF&logo=github&logoColor=FFF"></a>
+<a href="https://www.linkedin.com/in/cris-nakamura/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-FFF?style=flat&labelColor=black&color=FFF&logo=linkedin&logoColor=FFF"></a>
+---
+
+#### Emily Barreto da Silva
+<img align="left" width="155" height="155" src="https://i.ibb.co/7jJXZ3K/Emily.png" alt="Emily">
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br>
+
+<a href="https://github.com/Emily-Emy"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-FFF?style=flat&labelColor=black&color=FFF&logo=github&logoColor=FFF"></a>
+<a href="https://www.linkedin.com/in/emily-barreto-a54848208/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-FFF?style=flat&labelColor=black&color=FFF&logo=linkedin&logoColor=FFF"></a>
+---
+
+#### Guilherme Moreira Leocadio
+<img align="left" width="155" height="155" src="https://i.ibb.co/7jJXZ3K/Guilherme.png" alt="Guilherme">
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br>
+
+<a href="https://github.com/le0cadio"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-FFF?style=flat&labelColor=black&color=FFF&logo=github&logoColor=FFF"></a>
+<a href="{LINKEDIN}"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-FFF?style=flat&labelColor=black&color=FFF&logo=linkedin&logoColor=FFF"></a>
+---
+
+#### Phelipe Cordeiro da Silva
+<img align="left" width="155" height="155" src="https://i.ibb.co/7jJXZ3K/Phelipe.png" alt="Phelipe">
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br>
+
+<a href="https://github.com/PHCS94"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-FFF?style=flat&labelColor=black&color=FFF&logo=github&logoColor=FFF"></a>
+<a href="https://www.linkedin.com/in/phelipe-cordeiro-da-silva-7210b41b6/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-FFF?style=flat&labelColor=black&color=FFF&logo=linkedin&logoColor=FFF"></a>
+---
 
 # Licença
 [MIT License](https://opensource.org/license/mit/)
