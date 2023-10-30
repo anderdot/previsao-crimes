@@ -1,8 +1,628 @@
 {
     "FurtoCelular": {
-        "diretorio": "c:\\TCC\\Bases\\FurtoCelular"
+        "diretorio": "c:\\TCC\\Bases\\FurtoCelular",
+        "arquivos": [
+            {
+                "nome": "DadosBO_2020_1(FURTO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "1",
+                "tamanho": "13377.62 KB",
+                "data": "2023-10-19 21:47:26.377697"
+            },
+            {
+                "nome": "DadosBO_2020_2(FURTO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "2",
+                "tamanho": "18273.02 KB",
+                "data": "2023-10-19 21:47:26.574829"
+            },
+            {
+                "nome": "DadosBO_2020_3(FURTO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "3",
+                "tamanho": "10442.95 KB",
+                "data": "2023-10-19 21:47:26.619121"
+            },
+            {
+                "nome": "DadosBO_2020_4(FURTO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "4",
+                "tamanho": "4799.58 KB",
+                "data": "2023-10-19 21:47:26.639740"
+            },
+            {
+                "nome": "DadosBO_2020_5(FURTO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "5",
+                "tamanho": "5111.98 KB",
+                "data": "2023-10-19 21:47:26.660916"
+            },
+            {
+                "nome": "DadosBO_2020_6(FURTO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "6",
+                "tamanho": "11256.01 KB",
+                "data": "2023-10-19 21:47:26.705056"
+            },
+            {
+                "nome": "DadosBO_2020_7(FURTO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "7",
+                "tamanho": "7805.54 KB",
+                "data": "2023-10-19 21:47:26.737796"
+            },
+            {
+                "nome": "DadosBO_2020_8(FURTO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "8",
+                "tamanho": "7644.39 KB",
+                "data": "2023-10-19 21:47:26.769489"
+            },
+            {
+                "nome": "DadosBO_2020_9(FURTO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "9",
+                "tamanho": "8533.05 KB",
+                "data": "2023-10-19 21:47:26.804408"
+            },
+            {
+                "nome": "DadosBO_2020_10(FURTO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "10",
+                "tamanho": "9548.56 KB",
+                "data": "2023-10-19 21:47:26.417172"
+            },
+            {
+                "nome": "DadosBO_2020_11(FURTO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "11",
+                "tamanho": "9608.84 KB",
+                "data": "2023-10-19 21:47:26.460090"
+            },
+            {
+                "nome": "DadosBO_2020_12(FURTO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "12",
+                "tamanho": "9728.08 KB",
+                "data": "2023-10-19 21:47:26.502588"
+            },
+            {
+                "nome": "DadosBO_2021_1(FURTO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "1",
+                "tamanho": "9381.40 KB",
+                "data": "2023-10-19 21:47:26.842263"
+            },
+            {
+                "nome": "DadosBO_2021_2(FURTO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "2",
+                "tamanho": "9250.61 KB",
+                "data": "2023-10-19 21:47:27.027539"
+            },
+            {
+                "nome": "DadosBO_2021_3(FURTO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "3",
+                "tamanho": "7976.15 KB",
+                "data": "2023-10-19 21:47:27.061479"
+            },
+            {
+                "nome": "DadosBO_2021_4(FURTO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "4",
+                "tamanho": "7532.77 KB",
+                "data": "2023-10-19 21:47:27.092366"
+            },
+            {
+                "nome": "DadosBO_2021_5(FURTO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "5",
+                "tamanho": "9372.36 KB",
+                "data": "2023-10-19 21:47:27.130495"
+            },
+            {
+                "nome": "DadosBO_2021_6(FURTO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "6",
+                "tamanho": "9696.84 KB",
+                "data": "2023-10-19 21:47:27.170434"
+            },
+            {
+                "nome": "DadosBO_2021_7(FURTO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "7",
+                "tamanho": "10262.02 KB",
+                "data": "2023-10-19 21:47:27.209451"
+            },
+            {
+                "nome": "DadosBO_2021_8(FURTO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "8",
+                "tamanho": "10762.94 KB",
+                "data": "2023-10-19 21:47:27.252661"
+            },
+            {
+                "nome": "DadosBO_2021_9(FURTO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "9",
+                "tamanho": "11339.64 KB",
+                "data": "2023-10-19 21:47:27.296685"
+            },
+            {
+                "nome": "DadosBO_2021_10(FURTO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "10",
+                "tamanho": "11330.88 KB",
+                "data": "2023-10-19 21:47:26.886023"
+            },
+            {
+                "nome": "DadosBO_2021_11(FURTO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "11",
+                "tamanho": "12798.00 KB",
+                "data": "2023-10-19 21:47:26.938410"
+            },
+            {
+                "nome": "DadosBO_2021_12(FURTO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "12",
+                "tamanho": "12197.71 KB",
+                "data": "2023-10-19 21:47:26.988276"
+            },
+            {
+                "nome": "DadosBO_2022_1(FURTO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "1",
+                "tamanho": "10703.25 KB",
+                "data": "2023-10-19 21:47:27.340615"
+            },
+            {
+                "nome": "DadosBO_2022_2(FURTO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "2",
+                "tamanho": "10303.00 KB",
+                "data": "2023-10-19 21:47:27.553933"
+            },
+            {
+                "nome": "DadosBO_2022_3(FURTO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "3",
+                "tamanho": "13292.96 KB",
+                "data": "2023-10-19 21:47:27.608695"
+            },
+            {
+                "nome": "DadosBO_2022_4(FURTO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "4",
+                "tamanho": "12782.90 KB",
+                "data": "2023-10-19 21:47:27.661586"
+            },
+            {
+                "nome": "DadosBO_2022_5(FURTO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "5",
+                "tamanho": "13791.62 KB",
+                "data": "2023-10-19 21:47:27.718435"
+            },
+            {
+                "nome": "DadosBO_2022_6(FURTO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "6",
+                "tamanho": "14379.66 KB",
+                "data": "2023-10-19 21:47:27.782170"
+            },
+            {
+                "nome": "DadosBO_2022_7(FURTO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "7",
+                "tamanho": "6476.30 KB",
+                "data": "2023-10-19 21:47:27.812117"
+            },
+            {
+                "nome": "DadosBO_2022_8(FURTO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "8",
+                "tamanho": "8413.99 KB",
+                "data": "2023-10-19 21:47:27.847993"
+            },
+            {
+                "nome": "DadosBO_2022_9(FURTO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "9",
+                "tamanho": "12918.59 KB",
+                "data": "2023-10-19 21:47:27.900851"
+            },
+            {
+                "nome": "DadosBO_2022_10(FURTO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "10",
+                "tamanho": "14554.68 KB",
+                "data": "2023-10-19 21:47:27.397433"
+            },
+            {
+                "nome": "DadosBO_2022_11(FURTO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "11",
+                "tamanho": "14114.52 KB",
+                "data": "2023-10-19 21:47:27.454378"
+            },
+            {
+                "nome": "DadosBO_2022_12(FURTO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "12",
+                "tamanho": "13930.63 KB",
+                "data": "2023-10-19 21:47:27.510504"
+            },
+            {
+                "nome": "DadosBO_2023_1(FURTO DE CELULAR).xls",
+                "ano": "2023",
+                "mes": "1",
+                "tamanho": "6233.74 KB",
+                "data": "2023-10-19 21:47:27.933834"
+            },
+            {
+                "nome": "DadosBO_2023_2(FURTO DE CELULAR).xls",
+                "ano": "2023",
+                "mes": "2",
+                "tamanho": "12174.08 KB",
+                "data": "2023-10-19 21:47:28.096264"
+            },
+            {
+                "nome": "DadosBO_2023_3(FURTO DE CELULAR).xls",
+                "ano": "2023",
+                "mes": "3",
+                "tamanho": "14967.99 KB",
+                "data": "2023-10-19 21:47:28.202671"
+            },
+            {
+                "nome": "DadosBO_2023_4(FURTO DE CELULAR).xls",
+                "ano": "2023",
+                "mes": "4",
+                "tamanho": "12985.13 KB",
+                "data": "2023-10-19 21:47:28.314070"
+            },
+            {
+                "nome": "DadosBO_2023_5(FURTO DE CELULAR).xls",
+                "ano": "2023",
+                "mes": "5",
+                "tamanho": "14933.77 KB",
+                "data": "2023-10-19 21:47:28.434262"
+            },
+            {
+                "nome": "DadosBO_2023_6(FURTO DE CELULAR).xls",
+                "ano": "2023",
+                "mes": "6",
+                "tamanho": "14388.58 KB",
+                "data": "2023-10-19 21:47:28.634685"
+            },
+            {
+                "nome": "DadosBO_2023_7(FURTO DE CELULAR).xls",
+                "ano": "2023",
+                "mes": "7",
+                "tamanho": "13674.99 KB",
+                "data": "2023-10-19 21:47:28.693543"
+            },
+            {
+                "nome": "DadosBO_2023_8(FURTO DE CELULAR).xls",
+                "ano": "2023",
+                "mes": "8",
+                "tamanho": "14654.48 KB",
+                "data": "2023-10-19 21:47:28.752445"
+            }
+        ]
     },
     "RouboCelular": {
-        "diretorio": "c:\\TCC\\Bases\\RouboCelular"
+        "diretorio": "c:\\TCC\\Bases\\RouboCelular",
+        "arquivos": [
+            {
+                "nome": "DadosBO_2020_1(ROUBO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "1",
+                "tamanho": "19494.66 KB",
+                "data": "2023-10-19 21:47:28.833083"
+            },
+            {
+                "nome": "DadosBO_2020_2(ROUBO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "2",
+                "tamanho": "19792.49 KB",
+                "data": "2023-10-19 21:47:29.086532"
+            },
+            {
+                "nome": "DadosBO_2020_3(ROUBO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "3",
+                "tamanho": "16154.20 KB",
+                "data": "2023-10-19 21:47:29.150242"
+            },
+            {
+                "nome": "DadosBO_2020_4(ROUBO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "4",
+                "tamanho": "10330.55 KB",
+                "data": "2023-10-19 21:47:29.192692"
+            },
+            {
+                "nome": "DadosBO_2020_5(ROUBO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "5",
+                "tamanho": "9583.50 KB",
+                "data": "2023-10-19 21:47:29.232596"
+            },
+            {
+                "nome": "DadosBO_2020_6(ROUBO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "6",
+                "tamanho": "13815.64 KB",
+                "data": "2023-10-19 21:47:29.288172"
+            },
+            {
+                "nome": "DadosBO_2020_7(ROUBO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "7",
+                "tamanho": "11424.50 KB",
+                "data": "2023-10-19 21:47:29.410798"
+            },
+            {
+                "nome": "DadosBO_2020_8(ROUBO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "8",
+                "tamanho": "11247.85 KB",
+                "data": "2023-10-19 21:47:29.457465"
+            },
+            {
+                "nome": "DadosBO_2020_9(ROUBO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "9",
+                "tamanho": "12157.37 KB",
+                "data": "2023-10-19 21:47:29.508380"
+            },
+            {
+                "nome": "DadosBO_2020_10(ROUBO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "10",
+                "tamanho": "13196.42 KB",
+                "data": "2023-10-19 21:47:28.893911"
+            },
+            {
+                "nome": "DadosBO_2020_11(ROUBO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "11",
+                "tamanho": "13647.67 KB",
+                "data": "2023-10-19 21:47:28.949389"
+            },
+            {
+                "nome": "DadosBO_2020_12(ROUBO DE CELULAR).xls",
+                "ano": "2020",
+                "mes": "12",
+                "tamanho": "14909.34 KB",
+                "data": "2023-10-19 21:47:29.009206"
+            },
+            {
+                "nome": "DadosBO_2021_1(ROUBO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "1",
+                "tamanho": "14564.35 KB",
+                "data": "2023-10-19 21:47:29.567271"
+            },
+            {
+                "nome": "DadosBO_2021_2(ROUBO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "2",
+                "tamanho": "13653.68 KB",
+                "data": "2023-10-19 21:47:29.798597"
+            },
+            {
+                "nome": "DadosBO_2021_3(ROUBO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "3",
+                "tamanho": "12496.51 KB",
+                "data": "2023-10-19 21:47:29.852453"
+            },
+            {
+                "nome": "DadosBO_2021_4(ROUBO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "4",
+                "tamanho": "12071.07 KB",
+                "data": "2023-10-19 21:47:29.902585"
+            },
+            {
+                "nome": "DadosBO_2021_5(ROUBO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "5",
+                "tamanho": "13150.94 KB",
+                "data": "2023-10-19 21:47:29.955518"
+            },
+            {
+                "nome": "DadosBO_2021_6(ROUBO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "6",
+                "tamanho": "12795.61 KB",
+                "data": "2023-10-19 21:47:30.007378"
+            },
+            {
+                "nome": "DadosBO_2021_7(ROUBO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "7",
+                "tamanho": "12914.81 KB",
+                "data": "2023-10-19 21:47:30.063280"
+            },
+            {
+                "nome": "DadosBO_2021_8(ROUBO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "8",
+                "tamanho": "14035.73 KB",
+                "data": "2023-10-19 21:47:30.121982"
+            },
+            {
+                "nome": "DadosBO_2021_9(ROUBO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "9",
+                "tamanho": "13793.36 KB",
+                "data": "2023-10-19 21:47:30.177849"
+            },
+            {
+                "nome": "DadosBO_2021_10(ROUBO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "10",
+                "tamanho": "13938.38 KB",
+                "data": "2023-10-19 21:47:29.626115"
+            },
+            {
+                "nome": "DadosBO_2021_11(ROUBO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "11",
+                "tamanho": "14381.74 KB",
+                "data": "2023-10-19 21:47:29.682915"
+            },
+            {
+                "nome": "DadosBO_2021_12(ROUBO DE CELULAR).xls",
+                "ano": "2021",
+                "mes": "12",
+                "tamanho": "14710.62 KB",
+                "data": "2023-10-19 21:47:29.742898"
+            },
+            {
+                "nome": "DadosBO_2022_1(ROUBO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "1",
+                "tamanho": "15270.65 KB",
+                "data": "2023-10-19 21:47:30.240813"
+            },
+            {
+                "nome": "DadosBO_2022_2(ROUBO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "2",
+                "tamanho": "12948.38 KB",
+                "data": "2023-10-19 21:47:30.536604"
+            },
+            {
+                "nome": "DadosBO_2022_3(ROUBO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "3",
+                "tamanho": "16986.87 KB",
+                "data": "2023-10-19 21:47:30.602463"
+            },
+            {
+                "nome": "DadosBO_2022_4(ROUBO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "4",
+                "tamanho": "16448.30 KB",
+                "data": "2023-10-19 21:47:30.669285"
+            },
+            {
+                "nome": "DadosBO_2022_5(ROUBO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "5",
+                "tamanho": "16305.08 KB",
+                "data": "2023-10-19 21:47:30.877357"
+            },
+            {
+                "nome": "DadosBO_2022_6(ROUBO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "6",
+                "tamanho": "17361.51 KB",
+                "data": "2023-10-19 21:47:31.017584"
+            },
+            {
+                "nome": "DadosBO_2022_7(ROUBO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "7",
+                "tamanho": "11587.21 KB",
+                "data": "2023-10-19 21:47:31.134802"
+            },
+            {
+                "nome": "DadosBO_2022_8(ROUBO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "8",
+                "tamanho": "13206.80 KB",
+                "data": "2023-10-19 21:47:31.255055"
+            },
+            {
+                "nome": "DadosBO_2022_9(ROUBO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "9",
+                "tamanho": "18432.36 KB",
+                "data": "2023-10-19 21:47:31.381735"
+            },
+            {
+                "nome": "DadosBO_2022_10(ROUBO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "10",
+                "tamanho": "20163.33 KB",
+                "data": "2023-10-19 21:47:30.318435"
+            },
+            {
+                "nome": "DadosBO_2022_11(ROUBO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "11",
+                "tamanho": "20233.35 KB",
+                "data": "2023-10-19 21:47:30.402941"
+            },
+            {
+                "nome": "DadosBO_2022_12(ROUBO DE CELULAR).xls",
+                "ano": "2022",
+                "mes": "12",
+                "tamanho": "20383.87 KB",
+                "data": "2023-10-19 21:47:30.483780"
+            },
+            {
+                "nome": "DadosBO_2023_1(ROUBO DE CELULAR).xls",
+                "ano": "2023",
+                "mes": "1",
+                "tamanho": "10670.89 KB",
+                "data": "2023-10-19 21:47:31.487259"
+            },
+            {
+                "nome": "DadosBO_2023_2(ROUBO DE CELULAR).xls",
+                "ano": "2023",
+                "mes": "2",
+                "tamanho": "14341.71 KB",
+                "data": "2023-10-19 21:47:31.595569"
+            },
+            {
+                "nome": "DadosBO_2023_3(ROUBO DE CELULAR).xls",
+                "ano": "2023",
+                "mes": "3",
+                "tamanho": "20653.51 KB",
+                "data": "2023-10-19 21:47:31.674429"
+            },
+            {
+                "nome": "DadosBO_2023_4(ROUBO DE CELULAR).xls",
+                "ano": "2023",
+                "mes": "4",
+                "tamanho": "17489.81 KB",
+                "data": "2023-10-19 21:47:31.744507"
+            },
+            {
+                "nome": "DadosBO_2023_5(ROUBO DE CELULAR).xls",
+                "ano": "2023",
+                "mes": "5",
+                "tamanho": "18357.52 KB",
+                "data": "2023-10-19 21:47:31.814995"
+            },
+            {
+                "nome": "DadosBO_2023_6(ROUBO DE CELULAR).xls",
+                "ano": "2023",
+                "mes": "6",
+                "tamanho": "17036.43 KB",
+                "data": "2023-10-19 21:47:31.878824"
+            },
+            {
+                "nome": "DadosBO_2023_7(ROUBO DE CELULAR).xls",
+                "ano": "2023",
+                "mes": "7",
+                "tamanho": "17588.35 KB",
+                "data": "2023-10-19 21:47:31.946134"
+            },
+            {
+                "nome": "DadosBO_2023_8(ROUBO DE CELULAR).xls",
+                "ano": "2023",
+                "mes": "8",
+                "tamanho": "18240.87 KB",
+                "data": "2023-10-19 21:47:32.016603"
+            }
+        ]
     }
 }
