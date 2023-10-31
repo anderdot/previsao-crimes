@@ -1,6 +1,7 @@
 {
     "FurtoCelular": {
         "diretorio": "c:\\TCC\\Bases\\FurtoCelular",
+        "expressao": "DadosBO_(\\d{4})_(\\d{1,2})\\(FURTO DE CELULAR\\)\\.(\\w+)",
         "arquivos": [
             {
                 "nome": "DadosBO_2020_1(FURTO DE CELULAR).xls",
@@ -314,6 +315,7 @@
     },
     "RouboCelular": {
         "diretorio": "c:\\TCC\\Bases\\RouboCelular",
+        "expressao": "DadosBO_(\\d{4})_(\\d{1,2})\\(ROUBO DE CELULAR\\)\\.(\\w+)",
         "arquivos": [
             {
                 "nome": "DadosBO_2020_1(ROUBO DE CELULAR).xls",
