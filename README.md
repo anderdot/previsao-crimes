@@ -128,7 +128,7 @@ Nascida no Japão e atualmente residindo em São Paulo. Sou detalhista e sempre 
 ---
 
 #### Emily Barreto da Silva
-<img align="left" width="155" height="155" src="https://i.ibb.co/nCt13Kz/Emily.png" alt="Emily">
+<img align="left" width="155" height="155" src="https://i.ibb.co/jRjYV0L/Emily.png" alt="Emily">
 
 Nascida e criada na zona leste de SP. Minha primeira formação e pós graduação é na área financeira a qual trabalhei por 15 anos. Na área da tecnologia praticamente cai de paraquedas há 7 anos atrás, onde fui convidada a trabalhar em uma software house, pois precisavam de alguém especialista em financeiro, para melhorar o sistema ERP. Me apaixonei pela área de tecnologia e estou concluindo o último semestre em ciência da computação. Continuo trabalhando com a mesma empresa, fazendo testes e implantação do sistema em clientes.</br>
 
