@@ -14,7 +14,7 @@
     <!-- Status -->
     <img alt="status" src="https://img.shields.io/badge/Status-Em%20desenvolvimento-FFF?style=flat&labelColor=black">
     <!-- Versão -->
-    <img alt="versão" src="https://img.shields.io/badge/Versão-0.4.1-FFF?style=flat&labelColor=black">
+    <img alt="versão" src="https://img.shields.io/badge/Versão-0.6-FFF?style=flat&labelColor=black">
     <!-- Estrelas -->
     <img alt="estrelas" src="https://img.shields.io/github/stars/anderdot/previsao-crimes?style=flat&labelColor=black&color=FFF&logo=github&logoColor=FFF&label=Estrelas">
     <!-- Commits -->
@@ -49,8 +49,8 @@ Em breve...
 - [x] Limpeza e tratamento dos dados
 - [x] Consolidação dos dados
 - [x] Análise exploratória dos dados
-- [ ] Criação de visualizações gráficas
-- [ ] Entendimento dos dados
+- [X] Criação de visualizações gráficas
+- [X] Entendimento dos dados
 - [ ] Criação de indicadores
 - [ ] Separação dos dados de treino e teste
 - [ ] Criação de modelos preditivos
@@ -84,6 +84,8 @@ Em breve...
     - [seaborn](https://seaborn.pydata.org/): Para a criação de gráficos.
     - [matplotlib](https://matplotlib.org/): Para a criação de gráficos.
     - [scikit-learn](https://scikit-learn.org/stable/): Para a criação de modelos preditivos.
+    - [selenium](https://selenium-python.readthedocs.io/): Para a automação do download dos arquivos.
+    - [webdriver-manager](https://pypi.org/project/webdriver-manager/): Para a automação do download dos arquivos.
 - [Power BI](https://powerbi.microsoft.com/pt-br/): Para a criação de dashboards e visualizações.
 - [PowerShell](https://docs.microsoft.com/pt-br/powershell/scripting/overview?view=powershell-7.1): Para a execução dos scripts de limpeza e renomeação dos arquivos baixados.
     - Caso utilize o Windows, o PowerShell já vem instalado por padrão.
@@ -99,7 +101,7 @@ Caminhe até o diretório onde deseja clonar o projeto e execute o seguinte coma
     ```bash
     git clone https://github.com/anderdot/previsao-crimes.git
     ```
-2. Mova os arquivos do diretório de [Furtos](https://github.com/anderdot/previsao-crimes/tree/main/Bases/FurtoCelular/Original) e [Roubos](https://github.com/anderdot/previsao-crimes/tree/main/Bases/RouboCelular/Original) para o diretório correspondente de cada, para serem processados.
+2. Execute o script de [BaixarArquivos](https://github.com/anderdot/previsao-crimes/tree/main/Scripts/BaixarArquivos.bat) para baixar os arquivos do portal de segurança pública do Estado de São Paulo.</br>
 3. Executar os scripts de banco de dados.</br>
 No diretório de [Estrutura](https://github.com/anderdot/previsao-crimes/tree/main/Estruturas) possui maior detalhamento do que cada script faz e como executá-los no README.
 4. Executar os scripts em python do diretório [Analises](https://github.com/anderdot/previsao-crimes/tree/main/Analises).
@@ -108,9 +110,9 @@ No diretório de [Estrutura](https://github.com/anderdot/previsao-crimes/tree/ma
 # Autores
 
 #### Anderson Silva Araújo
-<img align="left" width="155" height="155" src="https://i.ibb.co/JHKjdwh/Anderson.png">
+<img align="left" width="155" height="155" src="https://i.ibb.co/0rvsdVG/Anderson.jpg">
 
-Moro no emblemático Jaçana do ilustre Adoniran Barbosa. Desde a infância, nutro um entusiasmo pela tecnologia. Ingressei na ETEC de informática, onde construí uma base sólida na área, formando-me em 2016. Atualmente, estou cursando o último semestre de Ciência da Computação na FMU e trabalhando como administrador de banco de dados.<br>
+Moro no emblemático Jaçana do ilustre Adoniran Barbosa. Desde a infância, nutro um entusiasmo pela tecnologia. Ingressei na ETEC de informática, onde construí uma base sólida na área, formando-me em 2016. Atualmente, estou cursando o último semestre de Ciência da Computação na FMU e trabalhando como administrador de banco de dados.</br>
 
 <a href="https://github.com/anderdot"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-FFF?style=flat&labelColor=black&color=FFF&logo=github&logoColor=FFF"></a>
 <a href="https://www.linkedin.com/in/anderdot/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-FFF?style=flat&labelColor=black&color=FFF&logo=linkedin&logoColor=FFF"></a>
@@ -119,16 +121,16 @@ Moro no emblemático Jaçana do ilustre Adoniran Barbosa. Desde a infância, nut
 #### Cris Natsumi Hiodo Nakamura
 <img align="left" width="155" height="155" src="https://i.ibb.co/tL7g2CF/Cris.jpg" alt="Cris">
 
-Nascida no Japão e atualmente residindo em São Paulo. Sou detalhista e sempre tive facilidade com números. Entusiasta de dados e apaixonada pelos insights que elas podem proporcionar. Tenho me especializado em análise e ciência de dados e com um "pezinho" em machine learning. No momento estou concluindo o último semestre do curso de Ciência da Computação na FMU.<br>
+Nascida no Japão e atualmente residindo em São Paulo. Sou detalhista e sempre tive facilidade com números. Entusiasta de dados e apaixonada pelos insights que elas podem proporcionar. Tenho me especializado em análise e ciência de dados e com um "pezinho" em machine learning. No momento estou concluindo o último semestre do curso de Ciência da Computação na FMU.</br>
 
 <a href="https://github.com/CrisNakamura"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-FFF?style=flat&labelColor=black&color=FFF&logo=github&logoColor=FFF"></a>
 <a href="https://www.linkedin.com/in/cris-nakamura/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-FFF?style=flat&labelColor=black&color=FFF&logo=linkedin&logoColor=FFF"></a>
 ---
 
 #### Emily Barreto da Silva
-<img align="left" width="155" height="155" src="https://i.ibb.co/7jJXZ3K/Emily.png" alt="Emily">
+<img align="left" width="155" height="155" src="https://i.ibb.co/nCt13Kz/Emily.png" alt="Emily">
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br>
+Nascida e criada na zona leste de SP. Minha primeira formação e pós graduação é na área financeira a qual trabalhei por 15 anos. Na área da tecnologia praticamente cai de paraquedas há 7 anos atrás, onde fui convidada a trabalhar em uma software house, pois precisavam de alguém especialista em financeiro, para melhorar o sistema ERP. Me apaixonei pela área de tecnologia e estou concluindo o último semestre em ciência da computação. Continuo trabalhando com a mesma empresa, fazendo testes e implantação do sistema em clientes.</br>
 
 <a href="https://github.com/Emily-Emy"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-FFF?style=flat&labelColor=black&color=FFF&logo=github&logoColor=FFF"></a>
 <a href="https://www.linkedin.com/in/emily-barreto-a54848208/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-FFF?style=flat&labelColor=black&color=FFF&logo=linkedin&logoColor=FFF"></a>
@@ -137,16 +139,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 #### Guilherme Moreira Leocadio
 <img align="left" width="155" height="155" src="https://i.ibb.co/7jJXZ3K/Guilherme.png" alt="Guilherme">
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</br>
 
 <a href="https://github.com/le0cadio"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-FFF?style=flat&labelColor=black&color=FFF&logo=github&logoColor=FFF"></a>
-<a href="{LINKEDIN}"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-FFF?style=flat&labelColor=black&color=FFF&logo=linkedin&logoColor=FFF"></a>
+<a href="https://www.linkedin.com/in/guilhermeleocadio/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-FFF?style=flat&labelColor=black&color=FFF&logo=linkedin&logoColor=FFF"></a>
 ---
 
 #### Phelipe Cordeiro da Silva
-<img align="left" width="155" height="155" src="https://i.ibb.co/7jJXZ3K/Phelipe.png" alt="Phelipe">
+<img align="left" width="155" height="155" src="https://i.ibb.co/9GWyN1R/Phelipe.png" alt="Phelipe">
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br>
+Atualmente morando na zona leste Sapopemba, sempre fui curioso em saber como as coisas funcionam. Minha primeira vivência com a área de tecnologia foi em 2011 onde cursei eletrônica e conheci o Arduino, após isso fiquei lisonjeado pela área.
+Em 2020 decidi cursar ciências da computação e hoje me encontro no último semestre.</br>
 
 <a href="https://github.com/PHCS94"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-FFF?style=flat&labelColor=black&color=FFF&logo=github&logoColor=FFF"></a>
 <a href="https://www.linkedin.com/in/phelipe-cordeiro-da-silva-7210b41b6/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-FFF?style=flat&labelColor=black&color=FFF&logo=linkedin&logoColor=FFF"></a>
