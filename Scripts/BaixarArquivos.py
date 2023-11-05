@@ -273,27 +273,29 @@ for categoria in pendentes:
             clicar('mes', mes)
 
             if verificar_periodo() == False:
-                print(f'Não há registros para a {categoria} no período {ano}-{mes}!')
+                print(f'Não há registros para {categoria} no período {ano}-{mes}!')
                 continue
-            print(f'Exportando {categoria}, {ano}-{mes}...')
-            clicar('exportar')
 
-            expressao = pendentes[categoria]["expressao"]
-            for i in range(0, 20):
-                arquivos = os.listdir(DIRETORIO_DOWNLOAD)
-                coincide = [arquivo for arquivo in arquivos if re.match(expressao, arquivo)]
+            try:
+                print(f'Exportando {categoria}, {ano}-{mes}...')
+                clicar('exportar')
 
-                if coincide:
-                    break
-                print('Aguardando arquivo baixar...')
-                time.sleep(5)
+                expressao = pendentes[categoria]["expressao"]
+                for i in range(0, 30):
+                    arquivos = os.listdir(DIRETORIO_DOWNLOAD)
+                    coincide = [arquivo for arquivo in arquivos if re.match(expressao, arquivo)]
 
-            for arquivo in coincide:
-                sucesso = adicionar_arquivo(categoria, arquivo)
-                if sucesso:
-                    print(f'Arquivo {arquivo} baixado com sucesso!')
-                else:
-                    print(f'Erro ao baixar arquivo {arquivo}!')
+                    if coincide:
+                        break
+                    print('Aguardando arquivo baixar...')
+                    time.sleep(5)
+
+                for arquivo in coincide:
+                    sucesso = adicionar_arquivo(categoria, arquivo)
+                    if sucesso:
+                        print(f'Arquivo {arquivo} baixado com sucesso!')
+            except Exception as e:
+                 print(f'Erro ao baixar arquivo para {categoria} no período {ano}-{mes}!\nErro: {e}')
 
 print('Fechando navegador...')
 navegador.quit()
