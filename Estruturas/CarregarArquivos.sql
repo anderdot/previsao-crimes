@@ -209,7 +209,7 @@ CREATE TABLE #TMP_Arquivos (
 ,   [idCategoria]       INT
 ,   [categoria]         VARCHAR (100)
 ,   [diretorio]         VARCHAR (1000)
-,   [nomeArquivo]       VARCHAR (100) COLLATE Latin1_General_CI_AI
+,   [nomeArquivo]       VARCHAR (100)
 ,   [nomeFinal]         VARCHAR (100)
 ,   [extensao]          VARCHAR (10)
 ,   [delimitadorColuna] VARCHAR (10)
@@ -318,10 +318,12 @@ BEGIN
     ,   @tabelaParam      = @tabela
 
     SET @comando = 'MOVE /Y ' + QUOTENAME(CONCAT(@diretorio, @arquivo), '"') + ' '
-        + QUOTENAME(CONCAT(@diretorio, 'processados\', @arquivo), '" > NUL')
+        + QUOTENAME(CONCAT(@diretorio, 'processados\', @arquivo), '"')
 
     IF @depurar = 1 PRINT '-- [5.1] @comando: ' + ISNULL(@comando, 'NULL')
-    EXEC master.dbo.xp_cmdshell @comando
+    EXEC master.dbo.xp_cmdshell @comando, NO_OUTPUT;
+
+    PRINT '-- [5.1] Arquivo ' + @arquivo + ' processado com sucesso.'
 
     UPDATE #TMP_Arquivos
     SET [processado] = 1

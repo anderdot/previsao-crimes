@@ -5,7 +5,7 @@ GO
 -- Autor: <Anderson Araújo>
 -- Data de criação: <2023-10-15>
 -- Data de atualização: <2023-10-15>
--- Descrição: <Script transformar arquivos de estagio em produção>
+-- Descrição: <Script de transformar arquivos de estagio em produção>
 -- ====================================================================================================
 
 /*
@@ -29,7 +29,7 @@ AS
 -- ====================================================================================================
 
 DECLARE
-    @depurar          BIT           = 1
+    @depurar          BIT           = 0
 -- ,   @idArquivoParam   INT           = 1
 -- ,   @idCategoriaParam INT           = 1
 -- ,   @categoriaParam   VARCHAR (100) = 'FurtoCelular'
@@ -74,15 +74,13 @@ BEGIN
     SET @comando = '-- [3.0] Criar tabela
     DROP TABLE IF EXISTS ' + QUOTENAME(@categoria) + '.' + QUOTENAME(@tabela) + '
     CREATE TABLE ' + QUOTENAME(@categoria) + '.' + QUOTENAME(@tabela) + ' (
-        [anoBO]                  VARCHAR (4)
+        [anoBO]                  INT
     ,   [numeroBO]               VARCHAR (20)
-    ,   [numeroBoletim]          VARCHAR (20)
     ,   [boIniciado]             DATETIME
     ,   [boEmitido]              DATETIME
     ,   [dataOcorrencia]         DATE
     ,   [horaOcorrencia]         TIME(0)
     ,   [periodoOcorrencia]      VARCHAR (15)
-    ,   [dataComunicacao]        DATE
     ,   [boAutoria]              VARCHAR (20)
     ,   [flagrante]              BIT
     ,   [numeroBoletimPrincipal] VARCHAR (40)
@@ -92,7 +90,7 @@ BEGIN
     ,   [cidade]                 VARCHAR (100)
     ,   [descricaoLocal]         VARCHAR (100)
     ,   [solucao]                VARCHAR (100)
-    ,   [tipoDelegacia]          BIT
+    ,   [nomeDelegacia]          VARCHAR (100)
     ,   [rubrica]                VARCHAR (100)
     ,   [consumado]              VARCHAR (10)
     ,   [vitimaFatal]            VARCHAR (10)
@@ -102,7 +100,7 @@ BEGIN
     ,   [profissao]              VARCHAR (100)
     ,   [grauInstrucao]          VARCHAR (100)
     ,   [cor]                    VARCHAR (20)
-    ,   [quantidadeCelular]      VARCHAR (10)
+    ,   [quantidadeCelular]      INT
     ,   [marcaCelular]           VARCHAR (100)
     ,   [idArquivo]              INT
     )'
@@ -121,13 +119,11 @@ BEGIN
     INSERT INTO ' + QUOTENAME(@categoria) + '.' + QUOTENAME(@tabela) + ' (
         [anoBO]
     ,   [numeroBO]
-    ,   [numeroBoletim]
     ,   [boIniciado]
     ,   [boEmitido]
     ,   [dataOcorrencia]
     ,   [horaOcorrencia]
     ,   [periodoOcorrencia]
-    ,   [dataComunicacao]
     ,   [boAutoria]
     ,   [flagrante]
     ,   [numeroBoletimPrincipal]
@@ -137,7 +133,7 @@ BEGIN
     ,   [cidade]
     ,   [descricaoLocal]
     ,   [solucao]
-    ,   [tipoDelegacia]
+    ,   [nomeDelegacia]
     ,   [rubrica]
     ,   [consumado]
     ,   [vitimaFatal]
@@ -153,14 +149,18 @@ BEGIN
     )
     SELECT
         TRIM([ANO_BO]) AS [anoBO]
-    ,   TRIM([NUM_BO]) AS [numeroBO]
-    ,   TRIM([NUMERO_BOLETIM]) AS [numeroBoletim]
+    ,   TRIM([NUMERO_BOLETIM]) AS [numeroBO]
     ,   CAST(TRIM([BO_INICIADO]) AS DATETIME) AS [boIniciado]
     ,   CAST(TRIM([BO_EMITIDO]) AS DATETIME) AS [boEmitido]
     ,   CAST(TRIM([DATAOCORRENCIA]) AS DATE) AS [dataOcorrencia]
     ,   CAST(TRIM([HORAOCORRENCIA]) AS TIME(0)) AS [horaOcorrencia]
-    ,   TRIM([PERIDOOCORRENCIA]) AS [periodoOcorrencia]
-    ,   CAST(TRIM([DATACOMUNICACAO]) AS DATE) AS [dataComunicacao]
+    ,   CASE
+            WHEN [HORAOCORRENCIA] BETWEEN ''00:00:00'' AND ''05:59:59'' THEN ''MADRUGADA''
+            WHEN [HORAOCORRENCIA] BETWEEN ''06:00:00'' AND ''11:59:59'' THEN ''MANHÃ''
+            WHEN [HORAOCORRENCIA] BETWEEN ''12:00:00'' AND ''17:59:59'' THEN ''TARDE''
+            WHEN [HORAOCORRENCIA] BETWEEN ''18:00:00'' AND ''23:59:59'' THEN ''NOITE''
+            ELSE ''HORA INCERTA''
+        END AS [periodoOcorrencia]
     ,   TRIM(UPPER([BO_AUTORIA])) AS [boAutoria]
     ,   CASE WHEN TRIM([FLAGRANTE]) = ''SIM'' THEN 1 ELSE 0 END AS [flagrante]
     ,   TRIM([NUMERO_BOLETIM_PRINCIPAL]) AS [numeroBoletimPrincipal]
@@ -170,7 +170,7 @@ BEGIN
     ,   TRIM(UPPER(CASE WHEN b.[CIDADE] IS NULL THEN a.[CIDADE] ELSE b.[CidadeNormalizada] END)) AS [cidade]
     ,   TRIM(UPPER([DESCRICAOLOCAL])) AS [descricaoLocal]
     ,   TRIM(UPPER([SOLUCAO])) AS [solucao]
-    ,   CASE WHEN [DELEGACIA_NOME] IN (''DELEGACIA ELETRONICA'', ''DELEGACIA ELETRONICA 1'', ''DELEGACIA ELETRONICA 2'', ''DELEGACIA ELETRONICA 3'') THEN 0 ELSE 1 END AS [tipoDelegacia]
+    ,   TRIM(UPPER([DELEGACIA_NOME])) AS [nomeDelegacia]
     ,   TRIM(UPPER([RUBRICA])) AS [rubrica]
     ,   CASE WHEN TRIM([STATUS]) = ''CONSUMADO'' THEN 1 ELSE 0 END AS [consumado]
     ,   CASE WHEN TRIM([VITIMAFATAL]) IS NULL THEN 0 ELSE 1 END AS [vitimaFatal]
@@ -180,12 +180,16 @@ BEGIN
     ,   TRIM(UPPER([PROFISSAO])) AS [profissao]
     ,   TRIM(UPPER([GRAUINSTRUCAO])) AS [grauInstrucao]
     ,   TRIM(UPPER([CORCUTIS])) AS [cor]
-    ,   TRIM([QUANT_CELULAR]) AS [quantidadeCelular]
+    ,   ISNULL([QUANT_CELULAR], 1) AS [quantidadeCelular]
     ,   TRIM(UPPER([MARCA_CELULAR])) AS [marcaCelular]
     ,   ' + CAST(@idArquivo AS VARCHAR) + ' AS [idArquivo]
     FROM [Estagio].' + QUOTENAME(@categoria) + ' AS a
     LEFT JOIN [Depara].[CidadesAbreviadas] AS b
-        ON TRIM(UPPER(a.[CIDADE])) = b.[cidade]'
+        ON TRIM(UPPER(a.[CIDADE])) = b.[cidade]
+    WHERE TRY_CAST(ISNULL(a.[QUANT_CELULAR], 1) AS INT) IS NOT NULL
+    AND TRY_CAST([DATAOCORRENCIA] AS DATE) IS NOT NULL
+    AND CAST([DATAOCORRENCIA] AS DATE) BETWEEN ''2010-01-01'' AND GETDATE()
+    AND TRY_CAST(ISNULL([HORAOCORRENCIA], ''00:00'') AS TIME(0)) IS NOT NULL'
 
     IF @depurar = 1 PRINT '-- [4.0] @comando: ' + ISNULL(@comando, 'NULL')
     EXEC (@comando)

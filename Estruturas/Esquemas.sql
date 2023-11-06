@@ -6,9 +6,10 @@
 -- ====================================================================================================
 
 IF NOT EXISTS (SELECT 1 FROM [sys].[databases] WHERE [name] = 'PortalTransparencia')
-    CREATE DATABASE [PortalTransparencia] -- COLLATE Latin1_General_CI_AI
-
+    CREATE DATABASE [PortalTransparencia]
+GO
 USE [PortalTransparencia]
+GO
 
 IF NOT EXISTS (SELECT 1 FROM [sys].[schemas] WHERE [name] = 'Extrair')
     EXEC ('CREATE SCHEMA [Extrair]')
