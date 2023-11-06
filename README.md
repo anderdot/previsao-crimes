@@ -40,7 +40,11 @@ Este projeto procura analisar e desenvolver um modelo preditivo baseado em dados
 - [Agradecimentos](#agradecimentos)
 
 # Sobre o projeto
-Em breve...
+Trabalho de Conclusão de curso apresentado como requisito parcial para obtenção do título de Bacharel em Ciência da Computação.
+
+Como descrito anteriormente, este projeto tem como objetivo principal analisar os dados coletados no Portal da Transparência e aplicar modelo preditiva a fim de prever a ocorrência de crimes em São Paulo.
+
+Esperamos que os resultados desta pesquisa possam ser aplicados na prática, orientando organizações governamentais, não governamentais e comunitárias na formulação de estratégias de prevenção e combate à criminalidade de forma que com as informações importadas sejam de fácil acesso e entendimento.
 
 # Progresso
 - [x] Download dos arquivos do portal de segurança pública do Estado de São Paulo
