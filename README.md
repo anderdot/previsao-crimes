@@ -55,9 +55,9 @@ Esperamos que os resultados desta pesquisa possam ser aplicados na prática, ori
 - [x] Análise exploratória dos dados
 - [X] Criação de visualizações gráficas
 - [X] Entendimento dos dados
-- [ ] Criação de indicadores
-- [ ] Separação dos dados de treino e teste
-- [ ] Criação de modelos preditivos
+- [x] Criação de indicadores
+- [x] Separação dos dados de treino e teste
+- [x] Criação de modelos preditivos
 - [ ] Harmonia dos indicadores para o dashboard
 - [ ] Criação de dashboards
 - [ ] Criação de relatórios
