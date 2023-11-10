@@ -4,7 +4,7 @@ GO
 -- ====================================================================================================
 -- Autor: <Anderson Araújo>
 -- Data de criação: <2023-11-07>
--- Data de atualização: <2023-11-07>
+-- Data de atualização: <2023-11-09>
 -- Descrição: <Script para criar a tabela de depara de cidades>
 -- ====================================================================================================
 
@@ -13,6 +13,7 @@ CREATE TABLE [Depara].[Cidades] (
     [id] INT IDENTITY (1, 1) NOT NULL
 ,   [cidade] VARCHAR (100) NOT NULL
 ,   [cidadeAbreviada] VARCHAR (100)
+,   [cidadePreenchidoErrado] VARCHAR (1000)
 ,   [regiaoIntermediaria] VARCHAR (100) NOT NULL
 ,   [regiaoImediata] VARCHAR (100) NOT NULL
 ,   [mesorregiao] VARCHAR (100) NOT NULL
