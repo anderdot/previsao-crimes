@@ -4,12 +4,15 @@ GO
 -- ====================================================================================================
 -- Autor: <Anderson Araújo> <Cris Natsumi>
 -- Data de criação: <2023-08-27>
--- Data de atualização: <2023-11-06>
+-- Data de atualização: <2023-11-11>
 -- Descrição: <Script para subir os arquivos no banco>
 -- ====================================================================================================
 
 /*
     EXEC [PortalTransparencia].[Carregar].[Arquivos]
+        EXEC [PortalTransparencia].[Transformar].[ConsolidarBoletins]
+        EXEC [PortalTransparencia].[Exportar].[BoletinsConsolidados]
+
 */
 
 CREATE OR ALTER PROCEDURE [Carregar].[Arquivos]
@@ -241,8 +244,9 @@ JOIN #TMP_ListarArquivos AS b
     ON b.[idCategoria] = a.[id]
 LEFT JOIN [Registro].[Arquivos] AS c
     ON c.[idCategoria] = a.[id]
-    AND c.[nomeArquivo] = b.[nomeArquivo]
+    AND c.[nomeArquivo] <> b.[nomeArquivo]
 WHERE b.[nomeArquivo] IS NOT NULL
+AND c.[nomeArquivo] IS NULL
 AND b.[nomeArquivo] <> 'Arquivo não encontrado'
 
 -- ====================================================================================================

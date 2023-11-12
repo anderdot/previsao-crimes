@@ -4,7 +4,7 @@ GO
 -- ====================================================================================================
 -- Autor: <Anderson Araújo> <Cris Natsumi>
 -- Data de criação: <2023-10-17>
--- Data de atualização: <2023-11-06>
+-- Data de atualização: <2023-11-11>
 -- Descrição: <Script para consolidar todas as bases em uma só>
 -- ====================================================================================================
 
@@ -83,7 +83,8 @@ IF NOT EXISTS (
 )
 BEGIN
     CREATE TABLE [Consolidado].[Boletins] (
-        [categoria]              VARCHAR (100)
+        [idCategoria]            INT
+    ,   [categoria]              VARCHAR (100)
     ,   [periodoBoletim]         VARCHAR (7)
     ,   [diaSemanaBoletim]       INT
     ,   [numeroBoletim]          VARCHAR (20)
@@ -95,10 +96,10 @@ BEGIN
     ,   [horaOcorrencia]         TIME(0)
     ,   [diaSemanaOcorrencia]    INT
     ,   [periodoDiaOcorrencia]   VARCHAR (15)
-    ,   [boletimAutoria]         VARCHAR (20)
     ,   [logradouro]             VARCHAR (100)
     ,   [numero]                 VARCHAR (10)
     ,   [bairro]                 VARCHAR (100)
+    ,   [idCidade]               INT
     ,   [cidade]                 VARCHAR (100)
     ,   [descricaoLocal]         VARCHAR (100)
     ,   [solucao]                VARCHAR (100)
@@ -118,6 +119,23 @@ BEGIN
     ,   [marcaCelular]           VARCHAR (100)
     ,   [idArquivo]              INT
     )
+
+    CREATE CLUSTERED INDEX IX_idCategoria ON [Consolidado].[Boletins]([idCategoria])
+
+    CREATE NONCLUSTERED INDEX IX_periodoBoletim ON [Consolidado].[Boletins]([periodoBoletim])
+    CREATE NONCLUSTERED INDEX IX_periodoOcorrencia ON [Consolidado].[Boletins]([periodoOcorrencia])
+    CREATE NONCLUSTERED INDEX IX_dataOcorrencia ON [Consolidado].[Boletins]([dataOcorrencia])
+    CREATE NONCLUSTERED INDEX IX_horaOcorrencia ON [Consolidado].[Boletins]([horaOcorrencia])
+    CREATE NONCLUSTERED INDEX IX_idCidade ON [Consolidado].[Boletins]([idCidade])
+
+    ALTER TABLE [Consolidado].[Boletins]
+        ADD CONSTRAINT FK_idCategoria FOREIGN KEY ([idCategoria]) REFERENCES [Depara].[Categorias]([id])
+
+    ALTER TABLE [Consolidado].[Boletins]
+        ADD CONSTRAINT FK_idCidade FOREIGN KEY ([idCidade]) REFERENCES [Depara].[Cidades]([id])
+
+    ALTER TABLE [Consolidado].[Boletins]
+        ADD CONSTRAINT FK_idArquivo FOREIGN KEY ([idArquivo]) REFERENCES [Depara].[Arquivos]([id])
 END
 
 -- ====================================================================================================
@@ -136,7 +154,8 @@ BEGIN
 
     SET @comando = '-- [4.0] Consolidar bases
     INSERT INTO [Consolidado].[Boletins] (
-        [categoria]
+        [idCategoria]
+    ,   [categoria]
     ,   [periodoBoletim]
     ,   [diaSemanaBoletim]
     ,   [numeroBoletim]
@@ -148,10 +167,10 @@ BEGIN
     ,   [horaOcorrencia]
     ,   [diaSemanaOcorrencia]
     ,   [periodoDiaOcorrencia]
-    ,   [boletimAutoria]
     ,   [logradouro]
     ,   [numero]
     ,   [bairro]
+    ,   [idCidade]
     ,   [cidade]
     ,   [descricaoLocal]
     ,   [solucao]
@@ -172,26 +191,27 @@ BEGIN
     ,   [idArquivo]
     )
     SELECT
-        ' + QUOTENAME(@esquema, '''''') + ' AS [categoria]
-    ,   LEFT(CAST([boIniciado] AS DATE), 7) AS [periodoBoletim]
-    ,   DATEPART(WEEKDAY, [boIniciado]) AS [diaSemanaBoletim]
+        ' + CAST(@idCategoria AS VARCHAR) + ' AS [idCategoria]
+    ,   ' + QUOTENAME(@esquema, '''''') + ' AS [categoria]
+    ,   [periodoBoletim]
+    ,   [diaSemanaBoletim]
     ,   [numeroBoletim]
     ,   [numeroBoletimPrincipal]
-    ,   [boIniciado] AS [boletimIniciado]
-    ,   [boEmitido] AS [boletimEmitido]
-    ,   LEFT([dataOcorrencia], 7) AS [periodoOcorrencia]
+    ,   [boletimIniciado]
+    ,   [boletimEmitido]
+    ,   [periodoOcorrencia]
     ,   [dataOcorrencia]
     ,   [horaOcorrencia]
-    ,   DATEPART(WEEKDAY, [dataOcorrencia]) AS [diaSemanaOcorrencia]
-    ,   [periodoOcorrencia] AS [periodoDiaOcorrencia]
-    ,   [boAutoria] AS [boletimAutoria]
+    ,   [diaSemanaOcorrencia]
+    ,   [periodoDiaOcorrencia]
     ,   [logradouro]
     ,   [numero]
     ,   [bairro]
+    ,   [idCidade]
     ,   [cidade]
     ,   [descricaoLocal]
     ,   [solucao]
-    ,   CASE WHEN [nomeDelegacia] IN (''DELEGACIA ELETRONICA'', ''DELEGACIA ELETRONICA 1'', ''DELEGACIA ELETRONICA 2'', ''DELEGACIA ELETRONICA 3'') THEN 0 ELSE 1 END AS [tipoDelegacia]
+    ,   [tipoDelegacia]
     ,   [nomeDelegacia]
     ,   [rubrica]
     ,   [flagrante]

@@ -4,31 +4,30 @@ GO
 -- ====================================================================================================
 -- Autor: <Anderson Araújo>
 -- Data de criação: <2023-11-07>
--- Data de atualização: <2023-11-09>
+-- Data de atualização: <2023-11-11>
 -- Descrição: <Script para criar a tabela de depara de cidades>
 -- ====================================================================================================
 
 DROP TABLE IF EXISTS [Depara].[Cidades]
 CREATE TABLE [Depara].[Cidades] (
-    [id] INT IDENTITY (1, 1) NOT NULL
-,   [cidade] VARCHAR (100) NOT NULL
-,   [cidadeAbreviada] VARCHAR (100)
-,   [cidadePreenchidoErrado] VARCHAR (1000)
-,   [regiaoIntermediaria] VARCHAR (100) NOT NULL
-,   [regiaoImediata] VARCHAR (100) NOT NULL
-,   [mesorregiao] VARCHAR (100) NOT NULL
-,   [microrregiao] VARCHAR (100) NOT NULL
-,   [populacaoCenso] INT NOT NULL
-,   [populacaoOcupado] INT NOT NULL
-,   [porcentagemPopulacaoOcupado] FLOAT NOT NULL
+    [id]                                     INT IDENTITY (1, 1) NOT NULL
+,   [cidade]                                 VARCHAR (100) NOT NULL
+,   [cidadePreenchidaErrada]                 VARCHAR (1000)
+,   [regiaoIntermediaria]                    VARCHAR (100) NOT NULL
+,   [regiaoImediata]                         VARCHAR (100) NOT NULL
+,   [mesorregiao]                            VARCHAR (100) NOT NULL
+,   [microrregiao]                           VARCHAR (100) NOT NULL
+,   [populacaoCenso]                         INT NOT NULL
+,   [populacaoOcupado]                       INT NOT NULL
+,   [porcentagemPopulacaoOcupado]            FLOAT NOT NULL
 ,   [salarioMedioMensalTrabalhadoresFormais] FLOAT NOT NULL
-,   [pibPerCapita] FLOAT NOT NULL
-,   [areaTerritorio] FLOAT NOT NULL
-,   [densidadeDemografica] FLOAT NOT NULL
-,   [areaUrbanizada] FLOAT NOT NULL
-,   [urbanizacaoViasPublicas] FLOAT NOT NULL
-,   [arborizacaoViasPublicas] FLOAT NOT NULL
-,   [idhm] FLOAT NOT NULL
+,   [pibPerCapita]                           FLOAT NOT NULL
+,   [areaTerritorio]                         FLOAT NOT NULL
+,   [densidadeDemografica]                   FLOAT NOT NULL
+,   [areaUrbanizada]                         FLOAT NOT NULL
+,   [urbanizacaoViasPublicas]                FLOAT NOT NULL
+,   [arborizacaoViasPublicas]                FLOAT NOT NULL
+,   [idhm]                                   FLOAT NOT NULL
 )
 
 ALTER TABLE [Depara].[Cidades]
@@ -50,3 +49,20 @@ WITH
 ,   ERRORFILE       = 'C:\TCC\Analises\Dados\dados_cidades_error.csv'
 ,   TABLOCK
 )
+
+-- ====================================================================================================
+-- Tabela para armazenar cidades que não foram encontradas no depara
+-- ====================================================================================================
+
+DROP TABLE IF EXISTS [Depara].[CidadesNaoEncontradas]
+CREATE TABLE [Depara].[CidadesNaoEncontradas] (
+    [id] INT IDENTITY (1, 1) NOT NULL
+,   [cidade] VARCHAR (100) NOT NULL
+,   [idArquivo] INT NOT NULL
+)
+
+ALTER TABLE [Depara].[CidadesNaoEncontradas]
+ADD CONSTRAINT [PK_CidadesNaoEncontradas] PRIMARY KEY CLUSTERED ([id] ASC)
+
+ALTER TABLE [Depara].[CidadesNaoEncontradas]
+ADD CONSTRAINT [FK_CidadesNaoEncontradas_Arquivos] FOREIGN KEY ([idArquivo]) REFERENCES [Registro].[Arquivos] ([id])
