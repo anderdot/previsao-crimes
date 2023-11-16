@@ -9,6 +9,7 @@ AND [quantidadeCelular] = 1
 GROUP BY [marcaCelular]
 ORDER BY [marcaCelular]
 
+
 DELETE FROM #MarcaCelular
 WHERE [marcaCelular] LIKE '%SAM%'
 OR [marcaCelular] LIKE '%SAN%'
@@ -17,30 +18,43 @@ OR [marcaCelular] LIKE '%SUN%'
 OR [marcaCelular] LIKE '%GAL%'
 OR [marcaCelular] LIKE '%GLA%'
 OR [marcaCelular] LIKE '%GRAN PRIME%'
-OR [marcaCelular] LIKE '%J7 PRIME%'
-OR [marcaCelular] LIKE '%J5%'
+OR [marcaCelular] LIKE '%GRANPRIME%'
+OR [marcaCelular] LIKE '%GRAND PRIME%'
+OR [marcaCelular] LIKE '%GRAMPRIME%'
+OR [marcaCelular] LIKE '%GRAM PRIME%'
 OR [marcaCelular] LIKE '%SMASNUNG%'
-OR [marcaCelular] LIKE '%J3%'
 
+OR [marcaCelular] LIKE '%SASMUNG%'
+OR [marcaCelular] LIKE '%SAUMSGUN%'
+OR [marcaCelular] LIKE '%S[45]%'
+OR [marcaCelular] LIKE '%J[12357]%'
+OR [marcaCelular] LIKE '%J [12357]%'
 
 
 DELETE FROM #MarcaCelular
 WHERE [marcaCelular] LIKE '%MOTO%'
 OR [marcaCelular] LIKE '%MORO%'
 OR [marcaCelular] LIKE '%ROLA%'
+OR [marcaCelular] LIKE '%ROLLA%'
 OR [marcaCelular] LIKE '%MOTRO%'
 OR [marcaCelular] LIKE '%MOTTO%'
 OR [marcaCelular] LIKE '%MOTP%'
+OR [marcaCelular] LIKE '%MORTOLORA%'
 OR [marcaCelular] LIKE '%MTO G%'
 OR [marcaCelular] LIKE '%MOT G%'
-OR [marcaCelular] LIKE '%I296%'
-OR [marcaCelular] LIKE '%I-296%'
 OR [marcaCelular] LIKE '%G4%'
-OR [marcaCelular] LIKE '%MORTOLORA%'
+OR [marcaCelular] LIKE '%FERRARI%'
+OR [marcaCelular] LIKE '%MOTG%'
+OR PATINDEX('%I[0-9][0-9][0-9]%', [marcaCelular]) > 0
+OR PATINDEX('%I-[0-9][0-9][0-9]%', [marcaCelular]) > 0
+OR PATINDEX('%I [0-9][0-9][0-9]%', [marcaCelular]) > 0
+
 
 DELETE FROM #MarcaCelular
 WHERE [marcaCelular] LIKE '%NOK%'
 OR [marcaCelular] LIKE '%NÓK%'
+OR [marcaCelular] LIKE '%NOQ%'
+OR [marcaCelular] LIKE '%NÓQ%'
 OR [marcaCelular] LIKE '%NOXIA%'
 OR [marcaCelular] LIKE '%N[OK%'
 OR [marcaCelular] LIKE '%NOQI%'
@@ -50,31 +64,68 @@ OR [marcaCelular] LIKE '%NOTIA%'
 OR [marcaCelular] LIKE '%NPKIA%'
 OR [marcaCelular] LIKE '%NIKIA%'
 OR [marcaCelular] LIKE '%NOLIA%'
-
-
-
-
+OR [marcaCelular] LIKE '%MOKIA%'
+OR [marcaCelular] LIKE '%NCKIA%'
+OR [marcaCelular] LIKE '%NOCKIA%'
+OR [marcaCelular] LIKE '%NOJIA%'
+OR [marcaCelular] LIKE '%NOPKIA%'
+OR [marcaCelular] LIKE '%NORKIA%'
+OR [marcaCelular] LIKE '%KOKIA%'
+OR [marcaCelular] LIKE '%E71%'
+OR [marcaCelular] LIKE '%E-71%'
+OR [marcaCelular] LIKE '%E 71%'
+OR [marcaCelular] LIKE '%NKIA%'
+OR [marcaCelular] LIKE '%NO KIA%'
+OR [marcaCelular] LIKE '%NAKIA%'
+OR [marcaCelular] LIKE '%NOHIA%'
+OR [marcaCelular] = 'N O K I A'
 
 
 DELETE FROM #MarcaCelular
 WHERE [marcaCelular] LIKE '%LG%'
 OR [marcaCelular] LIKE '%L.G%'
+OR [marcaCelular] LIKE '%L/G%'
+OR [marcaCelular] LIKE '%L,G%'
 OR [marcaCelular] LIKE '%L&G%'
+OR [marcaCelular] LIKE '%L& G%'
 OR [marcaCelular] LIKE '%L G%'
-OR [marcaCelular] LIKE '%OPT%'
 OR [marcaCelular] LIKE '%L & G%'
+OR [marcaCelular] LIKE '%OPT%'
+OR [marcaCelular] LIKE '%GL%'
 OR [marcaCelular] LIKE '%ZANFONE%'
 OR [marcaCelular] LIKE '%Z FONE%'
+OR [marcaCelular] LIKE '%K10%'
+OR [marcaCelular] LIKE '%K-10%'
+OR [marcaCelular] LIKE '%K 10%'
+OR [marcaCelular] LIKE '%L. G.%'
 
 
 DELETE FROM #MarcaCelular
 WHERE [marcaCelular] LIKE '%ALCA%'
+OR [marcaCelular] LIKE '%ALK%'
 OR [marcaCelular] LIKE '%ACATEL%'
 OR [marcaCelular] LIKE '%EUCATEL%'
+OR [marcaCelular] LIKE '%ELCATEL%'
+OR [marcaCelular] LIKE '%ICATEL%'
+OR [marcaCelular] LIKE '%INCATEL%'
+OR [marcaCelular] LIKE '%AKATEL%'
+OR [marcaCelular] LIKE '%AUCATEL%'
+OR [marcaCelular] LIKE '%ECATEL%'
+OR [marcaCelular] LIKE '%ACALTEL%'
+OR [marcaCelular] LIKE '%CATEL%'
+OR [marcaCelular] LIKE '%ALCTEL%'
+OR [marcaCelular] LIKE '%OCATEL%'
 
 
 DELETE FROM #MarcaCelular
 WHERE [marcaCelular] LIKE '%NEX%'
+OR [marcaCelular] LIKE '%NESTEL%'
+OR [marcaCelular] LIKE '%NETEL%'
+OR [marcaCelular] LIKE '%NEYTEL%'
+OR [marcaCelular] LIKE '%NEKSTEL%'
+OR [marcaCelular] LIKE '%NETXTEL%'
+OR [marcaCelular] = 'N E X T E L'
+
 
 DELETE FROM #MarcaCelular
 WHERE [marcaCelular] LIKE '%HAW%'
@@ -95,14 +146,45 @@ OR [marcaCelular] LIKE '%HUWUEI%'
 OR [marcaCelular] LIKE '%HUWWI%'
 OR [marcaCelular] LIKE '%HOIAWEI%'
 OR [marcaCelular] LIKE '%HUWEI%'
-
+OR [marcaCelular] LIKE '%HUWAI%'
+OR [marcaCelular] LIKE '%HUWAY%'
+OR [marcaCelular] LIKE '%WUAWEI%'
+OR [marcaCelular] LIKE '%HWAEI%'
+OR [marcaCelular] LIKE '%HAUE%'
+OR [marcaCelular] LIKE '%HUWEY%'
+OR [marcaCelular] LIKE '%HWAUEI%'
+OR [marcaCelular] LIKE '%HAUAWEI%'
+OR [marcaCelular] LIKE '%HUWAIE%'
+OR [marcaCelular] LIKE '%HUEWEI%'
+OR [marcaCelular] LIKE '%HUAEI%'
+OR [marcaCelular] LIKE '%HOWEI%'
+OR [marcaCelular] LIKE '%HWEY%'
+OR [marcaCelular] LIKE '%HUA WEI%'
+OR [marcaCelular] LIKE '%HUAUWEI%'
+OR [marcaCelular] LIKE '%HUWAU%'
+OR [marcaCelular] LIKE '%HUAYEI%'
 
 
 DELETE FROM #MarcaCelular
-WHERE [marcaCelular] LIKE '%ASUS%'
+WHERE [marcaCelular] LIKE '%ASU%'
+OR [marcaCelular] LIKE '%AZUS%'
+OR [marcaCelular] LIKE '%ASSUS%'
+OR [marcaCelular] LIKE '%AZOS%'
 OR [marcaCelular] LIKE '%AZUS%'
 OR [marcaCelular] LIKE '%AZZUS%'
+OR [marcaCelular] LIKE '%ASSOS%'
 OR [marcaCelular] LIKE '%ZEN%'
+OR [marcaCelular] LIKE '%ASOS%'
+OR [marcaCelular] LIKE '%ASUZ%'
+OR [marcaCelular] LIKE '%AZUZ%'
+OR [marcaCelular] LIKE '%AUS%'
+OR [marcaCelular] LIKE '%ZEM FONE%'
+OR [marcaCelular] LIKE '%ZEFONE%'
+OR [marcaCelular] LIKE '%AZOZ%'
+OR [marcaCelular] LIKE '%A.Z.U.S%'
+OR [marcaCelular] LIKE '%AZZO%'
+OR [marcaCelular] LIKE '%ASIS%'
+
 
 DELETE FROM #MarcaCelular
 WHERE [marcaCelular] LIKE '%SONY%'
@@ -110,6 +192,9 @@ OR [marcaCelular] LIKE '%SONI%'
 OR [marcaCelular] LIKE '%SONN%'
 OR [marcaCelular] LIKE '%ERIK%'
 OR [marcaCelular] LIKE '%ERIC%'
+OR [marcaCelular] LIKE '%ERCSON%'
+OR [marcaCelular] LIKE '%ERIS%'
+OR [marcaCelular] LIKE '%ERCK%'
 OR [marcaCelular] LIKE '%XPERIA%'
 OR [marcaCelular] LIKE '%X SPERIA%'
 OR [marcaCelular] LIKE '%SNOY%'
@@ -117,7 +202,9 @@ OR [marcaCelular] LIKE '%X SPERIA%'
 OR [marcaCelular] LIKE '%SON Y%'
 OR [marcaCelular] LIKE '%Z PHONE%'
 OR [marcaCelular] LIKE '%SONE%'
-
+OR [marcaCelular] LIKE '%X PERIA%'
+OR [marcaCelular] LIKE '%XPHERIA%'
+OR [marcaCelular] LIKE '%SOMY%'
 
 
 DELETE FROM #MarcaCelular
@@ -140,16 +227,33 @@ OR [marcaCelular] LIKE '%BELRY%'
 OR [marcaCelular] LIKE '%DERRY%'
 OR [marcaCelular] LIKE '%BAARY%'
 OR [marcaCelular] LIKE '%BARRRY%'
-
+OR [marcaCelular] LIKE '%BEURY%'
+OR [marcaCelular] LIKE '%ERRY%'
+OR [marcaCelular] LIKE '%BYER%'
+OR [marcaCelular] LIKE '%BAYER%'
+OR [marcaCelular] LIKE '%BEURRY%'
+OR [marcaCelular] LIKE '%BARRI%'
+OR [marcaCelular] LIKE '%BEURRY%'
+OR [marcaCelular] LIKE '%BRRY%'
+OR [marcaCelular] LIKE '%BEARY%'
+OR [marcaCelular] LIKE '%BAUER%'
+OR [marcaCelular] LIKE '%BELRI%'
+OR [marcaCelular] LIKE '%BEURI%'
+OR [marcaCelular] LIKE '%BAUER%'
+OR [marcaCelular] LIKE '%BLARRY%'
+OR [marcaCelular] LIKE '%BARE%'
+OR [marcaCelular] LIKE '%BEWER%'
 
 
 DELETE FROM #MarcaCelular
-WHERE [marcaCelular] LIKE '%ZTE%'
-
-DELETE FROM #MarcaCelular
-WHERE [marcaCelular] LIKE '%LENOVO%'
+WHERE [marcaCelular] LIKE '%LENOV%'
 OR [marcaCelular] LIKE '%LE NOVO%'
 OR [marcaCelular] LIKE '%LONOVO%'
+OR [marcaCelular] LIKE '%LENNOVO%'
+OR [marcaCelular] LIKE '%LEONOV%'
+OR [marcaCelular] LIKE '%LEVON%'
+OR [marcaCelular] LIKE '%LENEVO%'
+OR [marcaCelular] LIKE '%LNOVO%'
 
 
 DELETE FROM #MarcaCelular
@@ -160,7 +264,10 @@ WHERE [marcaCelular] LIKE '%INTELBRAS%'
 OR [marcaCelular] LIKE '%INTEL BRAS%'
 
 DELETE FROM #MarcaCelular
-WHERE [marcaCelular] LIKE '%MICROSOFT%'
+WHERE [marcaCelular] LIKE '%WINDOWS%'
+OR [marcaCelular] LIKE '%MACROS%'
+OR [marcaCelular] LIKE '%MICROS%'
+OR [marcaCelular] LIKE '%MICROSOFT%'
 OR [marcaCelular] LIKE '%LUMIA%'
 OR [marcaCelular] LIKE '%WINDONS%'
 OR [marcaCelular] LIKE '%MICHOSOFT%'
@@ -170,36 +277,70 @@ OR [marcaCelular] LIKE '%LUMINA%'
 OR [marcaCelular] LIKE '%MICROPSOFT%'
 OR [marcaCelular] LIKE '%MIRCROSOFT%'
 OR [marcaCelular] LIKE '%MACROSSOFT%'
-
+OR [marcaCelular] LIKE '%WINDOS%'
+OR [marcaCelular] LIKE '%MICRO SOFT%'
+OR [marcaCelular] LIKE '%WINDOUS%'
+OR [marcaCelular] LIKE '%MICROFT%'
 
 
 DELETE FROM #MarcaCelular
-WHERE [marcaCelular] LIKE '%ZETEC%'
+WHERE [marcaCelular] LIKE '%ZTE%'
+OR [marcaCelular] LIKE '%ZETEC%'
 OR [marcaCelular] LIKE '%ZE TEC%'
+OR [marcaCelular] LIKE '%ZET%'
+OR [marcaCelular] LIKE '%ZTI%'
+OR [marcaCelular] LIKE '%ZIT%'
+OR [marcaCelular] = 'Z T E'
+
 
 DELETE FROM #MarcaCelular
 WHERE [marcaCelular] LIKE '%POSIT%'
 OR [marcaCelular] LIKE '%POISIT%'
+OR [marcaCelular] LIKE '%PSITIVO%'
 
 
 DELETE FROM #MarcaCelular
-WHERE [marcaCelular] LIKE '%SIEMENS%'
+WHERE [marcaCelular] LIKE '%SIEMEN%'
 OR [marcaCelular] LIKE '%SIMENS%'
 OR [marcaCelular] LIKE '%SEIMENS%'
+OR [marcaCelular] LIKE '%SIMIENS%'
+OR [marcaCelular] LIKE '%SIEMMENS%'
+OR [marcaCelular] LIKE '%SIEMES%'
+OR [marcaCelular] LIKE '%SIEM%'
+OR [marcaCelular] LIKE '%SIMI%'
+OR [marcaCelular] LIKE '%SIME%'
+OR [marcaCelular] LIKE '%SIMM%'
+
 
 DELETE FROM #MarcaCelular
 WHERE [marcaCelular] LIKE '%NAVC%'
+OR [marcaCelular] LIKE '%NAVIC%'
+OR [marcaCelular] LIKE '%NAVEC%'
+OR [marcaCelular] LIKE '%NAV C%'
+
 
 DELETE FROM #MarcaCelular
 WHERE [marcaCelular] LIKE '%XIOM%'
 OR [marcaCelular] LIKE '%XIAO%'
-OR [marcaCelular] LIKE '%REDMI%'
+OR [marcaCelular] LIKE '%XIAMI%'
+OR [marcaCelular] LIKE '%XIAUMI%'
 OR [marcaCelular] LIKE '%XAOMI%'
-
+OR [marcaCelular] LIKE '%XIAMOI%'
+OR [marcaCelular] LIKE '%XAIOMI%'
+OR [marcaCelular] LIKE '%XAOIME%'
+OR [marcaCelular] LIKE '%XIOAMI%'
+OR [marcaCelular] LIKE '%XIAUME%'
+OR [marcaCelular] LIKE '%REDMI%'
+OR [marcaCelular] LIKE '%RED MI%'
+OR [marcaCelular] LIKE '%MIRAGE%'
+OR [marcaCelular] = 'MI'
+OR [marcaCelular] = 'MI|'
+OR [marcaCelular] = 'NI'
 
 
 DELETE FROM #MarcaCelular
 WHERE [marcaCelular] LIKE '%GRADIE%'
+
 
 DELETE FROM #MarcaCelular
 WHERE [marcaCelular] LIKE '%MULTIL%'
@@ -208,7 +349,11 @@ OR [marcaCelular] LIKE '%MULTLASER%'
 OR [marcaCelular] LIKE '%MULT-LASER%'
 OR [marcaCelular] LIKE '%MULTI-LASER%'
 OR [marcaCelular] LIKE '%MULTULASER%'
+OR [marcaCelular] LIKE '%MULT LASER%'
+OR [marcaCelular] LIKE '%MUTILASER%'
 OR [marcaCelular] LIKE '%MULTI-LAZER%'
+OR [marcaCelular] LIKE '%MULTI LAZER%'
+OR [marcaCelular] LIKE '%MILTILASER%'
 
 
 DELETE FROM #MarcaCelular
@@ -221,18 +366,44 @@ WHERE [marcaCelular] LIKE '%PHILIPS%'
 OR [marcaCelular] LIKE '%PHILLIPS%'
 
 
-
 DELETE FROM #MarcaCelular
 WHERE [marcaCelular] LIKE '%TOSHIBA%'
+OR [marcaCelular] LIKE '%SEMP%'
+ 
 
 DELETE FROM #MarcaCelular
 WHERE [marcaCelular] LIKE '%EMBRATEL%'
 
 
+DELETE FROM #MarcaCelular
+WHERE [marcaCelular] LIKE '%BLU%'
+
+
+DELETE FROM #MarcaCelular
+WHERE [marcaCelular] LIKE '%HTC%'
+
+
+DELETE FROM #MarcaCelular
+WHERE [marcaCelular] LIKE '%CCE%'
+
+
+DELETE FROM #MarcaCelular
+WHERE [marcaCelular] LIKE '%FOSTON%'
+
+
+DELETE FROM #MarcaCelular
+WHERE [marcaCelular] LIKE '%EYO%'
+
+
+DELETE FROM #MarcaCelular
+WHERE [marcaCelular] LIKE '%LENOX%'
+OR [marcaCelular] LIKE '%LENNOX%'
+
+
 
 DELETE FROM #MarcaCelular
 WHERE [marcaCelular] LIKE '%IPH%'
-OR [marcaCelular] LIKE '%I P%' -- I PNHONE
+OR [marcaCelular] LIKE '%I P%'
 OR [marcaCelular] LIKE '%I-PH%'
 OR [marcaCelular] LIKE '%IF%'
 OR [marcaCelular] LIKE '%I F%'
@@ -240,6 +411,8 @@ OR [marcaCelular] LIKE '%I-FON%'
 OR [marcaCelular] LIKE '%IPJO%'
 OR [marcaCelular] LIKE '%APL%'
 OR [marcaCelular] LIKE '%APPL%'
+OR [marcaCelular] LIKE '%IPL%'
+OR [marcaCelular] LIKE '%IPPL%'
 OR [marcaCelular] LIKE '%EPL%'
 OR [marcaCelular] LIKE '%EPPL%'
 OR [marcaCelular] LIKE '%IHPNE%'
@@ -265,6 +438,8 @@ OR [marcaCelular] LIKE '%AYFHONE%'
 OR [marcaCelular] LIKE '%IHPONE%'
 OR [marcaCelular] LIKE '%IPPHONE%'
 OR [marcaCelular] LIKE '%HI- PHONE%'
+OR [marcaCelular] LIKE '%YPHONE%'
+OR [marcaCelular] LIKE '%HYPHONE%'
 OR [marcaCelular] LIKE '%Y PHONE%'
 OR [marcaCelular] LIKE '%O PHONE%'
 OR [marcaCelular] LIKE '%E-PHONE%'
@@ -273,7 +448,32 @@ OR [marcaCelular] LIKE '%EPHONE%'
 OR [marcaCelular] LIKE '%AHPHONE%'
 OR [marcaCelular] LIKE '%E-PHONE%'
 OR [marcaCelular] LIKE '%IPLONE%'
+OR [marcaCelular] LIKE '%IPNHONE%'
+OR [marcaCelular] LIKE '%APPPLE%'
+OR [marcaCelular] LIKE '%APEL%'
+OR [marcaCelular] LIKE '%AYPHONE%'
+OR [marcaCelular] LIKE '%AYFONE%'
+OR [marcaCelular] LIKE '%OFONE%'
+OR [marcaCelular] LIKE '%OPHONE%'
 OR [marcaCelular] LIKE '%I'' PHONE%'
+OR [marcaCelular] LIKE '%I´PHONE%'
+OR [marcaCelular] LIKE '%I/PHONE%'
+OR [marcaCelular] LIKE '%ILPHONE%'
+OR [marcaCelular] LIKE '%EPHOL%'
+OR [marcaCelular] LIKE '%IPLHONE%'
+OR [marcaCelular] LIKE '%IPFONE%'
+OR [marcaCelular] LIKE '%I - %'
+OR [marcaCelular] LIKE '%APPO%'
+OR [marcaCelular] LIKE '%EPPO%'
+OR [marcaCelular] LIKE '%APHLE%'
+OR [marcaCelular] LIKE '%IPFHO%'
+OR [marcaCelular] LIKE '%I -%'
+OR [marcaCelular] LIKE '%I- %'
+OR [marcaCelular] LIKE '%Y-PH%'
+OR [marcaCelular] LIKE '%I- %'
+OR [marcaCelular] LIKE '%IP P%'
+OR [marcaCelular] LIKE '%AL P%'
+OR [marcaCelular] LIKE '%A P P L E%'
 
 
 DELETE FROM #MarcaCelular
@@ -309,20 +509,98 @@ OR [marcaCelular] LIKE '%NÃO LEMBRO%'
 OR [marcaCelular] LIKE '%NAO LEMBRO%'
 OR [marcaCelular] LIKE '%NÃOINFORMADO%'
 OR [marcaCelular] LIKE '%NAOINFORMADO%'
-
+OR [marcaCelular] LIKE '%IGNORADA%'
+OR [marcaCelular] LIKE '%IGNORADO%'
+OR [marcaCelular] LIKE '%DESCONHECIDA%'
+OR [marcaCelular] LIKE '%NÃO DECLARADA%'
+OR [marcaCelular] LIKE '%NAO DECLARADA%'
+OR [marcaCelular] LIKE '%?%'
+OR [marcaCelular] LIKE '%NAO DECLINADA%'
+OR [marcaCelular] LIKE '%MARCA IGNORADA%'
+OR [marcaCelular] LIKE '%DESCONHECIDO%'
+OR [marcaCelular] LIKE '%S/ MARCA%'
+OR [marcaCelular] LIKE '%S/MARCA%'
+OR [marcaCelular] LIKE '%DESCONHECE%'
+OR [marcaCelular] LIKE '%NAO FORNECIDA%'
+OR [marcaCelular] LIKE '%NÃO FORNECIDA%'
+OR [marcaCelular] LIKE '%NÃO FOI INFORMADA%'
+OR [marcaCelular] LIKE '%NAO FOI INFORMADA%'
+OR [marcaCelular] LIKE '%NÃO DEFINIDA%'
+OR [marcaCelular] LIKE '%NAO DEFINIDA%'
+OR [marcaCelular] LIKE '%MARCA DESCONHECIDA%'
+OR [marcaCelular] LIKE '%NÃO SABIDO%'
+OR [marcaCelular] LIKE '%NAO SABIDO%'
+OR [marcaCelular] LIKE '%N/RECORDA%'
+OR [marcaCelular] LIKE '%N/INFORMADA%'
+OR [marcaCelular] LIKE '%NÃO DECLINADA%'
+OR [marcaCelular] LIKE '%NAO DECLINADA%'
+OR [marcaCelular] LIKE '%NAO MENCIONADA%'
+OR [marcaCelular] LIKE '%NÃO MENCIONADA%'
+OR [marcaCelular] LIKE '%NAO DECLINADO%'
+OR [marcaCelular] LIKE '%NÃO DECLINADO%'
+OR [marcaCelular] LIKE '%SEM INFORMAÇÃO%'
+OR [marcaCelular] LIKE '%N/CONSTA%'
+OR [marcaCelular] LIKE '%NÃO FOI INFORMADO%'
+OR [marcaCelular] LIKE '%NAO FOI INFORMADO%'
+OR [marcaCelular] LIKE '%NÃO FOI INFORMADA%'
+OR [marcaCelular] LIKE '%NAO FOI INFORMADA%'
+OR [marcaCelular] LIKE '%N/SABE MARCA%'
+OR [marcaCelular] LIKE '%N/ RECORDA%'
+OR [marcaCelular] LIKE '%N/RECORDA%'
+OR [marcaCelular] LIKE '%Ñ SABE INFORMAR%'
+OR [marcaCelular] LIKE '%NÃO SABÍVEL%'
+OR [marcaCelular] LIKE '%NAO SABÍVEL%'
+OR [marcaCelular] LIKE '%NÃO OBSERVADA%'
+OR [marcaCelular] LIKE '%NAO OBSERVADA%'
+OR [marcaCelular] LIKE '%NÃO SABIDA%'
+OR [marcaCelular] LIKE '%NAO SABIDA%'
+OR [marcaCelular] LIKE '%NÃO FORNECIDO%'
+OR [marcaCelular] LIKE '%NAO FORNECIDO%'
+OR [marcaCelular] LIKE '%INDEFINIDA%'
+OR [marcaCelular] LIKE '%NÃO DECL%'
+OR [marcaCelular] LIKE '%NAO DECL%'
+OR [marcaCelular] LIKE '%INCERTA%'
+OR [marcaCelular] LIKE '%INCERTO%'
+OR [marcaCelular] LIKE '%NÃO FORNECIDA%'
+OR [marcaCelular] LIKE '%NAO FORNECIDA%'
+OR [marcaCelular] LIKE '%NAO DECLARADO%'
+OR [marcaCelular] LIKE '%NÃO DECLARADO%'
+OR [marcaCelular] LIKE '%NÃO APARENTE%'
+OR [marcaCelular] LIKE '%NAO APARENTE%'
+OR [marcaCelular] LIKE '%MENCIONADO%'
+OR [marcaCelular] LIKE '%MENCIONADA%'
+OR [marcaCelular] LIKE '%NÃO APURADA%'
+OR [marcaCelular] LIKE '%NAO APURADA%'
+OR [marcaCelular] LIKE '%NÃO REMEMORA%'
+OR [marcaCelular] LIKE '%NAO REMEMORA%'
+OR [marcaCelular] LIKE '%Ñ SABE%'
+OR [marcaCelular] LIKE '%N SABE%'
+OR [marcaCelular] LIKE '%Ñ LEMBRA%'
+OR [marcaCelular] LIKE '%N LEMBRA%'
+OR [marcaCelular] LIKE '%Ñ INFORMADO%'
+OR [marcaCelular] LIKE '%N INFORMADO%'
+OR [marcaCelular] LIKE '%DESPROVIDO%'
+OR [marcaCelular] LIKE '%DESPROVIDA%'
+OR [marcaCelular] LIKE '%NÃO SER RECORDA%'
+OR [marcaCelular] LIKE '%NAO SER RECORDA%'
+OR [marcaCelular] LIKE '%SEM INFORMAÇAÕ%'
+OR [marcaCelular] LIKE '%NÃO SE RECODA%'
+OR [marcaCelular] LIKE '%NAO SE RECODA%'
+OR [marcaCelular] LIKE '%Ñ SABE%'
+OR [marcaCelular] LIKE '%N SABE%'
+OR [marcaCelular] LIKE '%Ñ/SABE%'
+OR [marcaCelular] LIKE '%N/SABE%'
+OR [marcaCelular] LIKE '%APARENTE%'
+OR [marcaCelular] LIKE '%NÁO INFORMADO%'
+OR [marcaCelular] LIKE '%INFORMAR%'
+OR [marcaCelular] LIKE '%RECORDA%'
+OR [marcaCelular] LIKE '%DECLINAR%'
+OR [marcaCelular] LIKE '%RECORDA%'
+OR [marcaCelular] LIKE '%SEM OUTROS DADOS%'
+OR [marcaCelular] LIKE '%POSSUI%'
+OR [marcaCelular] LIKE '%POSSUÍ%'
+OR [marcaCelular] LIKE '%NÃO TEM MARCA%'
+OR [marcaCelular] LIKE '%NAO TEM MARCA%'
 
 
 SELECT * FROM #MarcaCelular ORDER BY [volume] DESC
-
-
-
-
-
-
-
-
-
-
-
-
-
