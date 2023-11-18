@@ -141,9 +141,9 @@ Nascida e criada na zona leste de SP. Minha primeira formação e pós graduaç�
 ---
 
 #### Guilherme Moreira Leocadio
-<img align="left" width="155" height="155" src="https://i.ibb.co/7jJXZ3K/Guilherme.png" alt="Guilherme">
+<img align="left" width="155" height="155" src="https://i.ibb.co/P4BD61x/Leocadio.png" alt="Guilherme">
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</br>
+Nascido e criado em são paulo, sempre tive interesse pela área de tecnologia e esportes. Comecei a estudar sobre tecnologia na adolescência onde descobri um mundo totalmente diferente a o que estava acostumado no mundo dos esportes. Atualmente estou cursando o último semestre de Ciência da Computação, e trabalhando com IT operations.</br>
 
 <a href="https://github.com/le0cadio"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-FFF?style=flat&labelColor=black&color=FFF&logo=github&logoColor=FFF"></a>
 <a href="https://www.linkedin.com/in/guilhermeleocadio/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-FFF?style=flat&labelColor=black&color=FFF&logo=linkedin&logoColor=FFF"></a>
