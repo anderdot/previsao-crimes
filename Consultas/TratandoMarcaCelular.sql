@@ -3,7 +3,7 @@ SELECT
     [marcaCelular]
 ,   COUNT(1) AS [volume]
 INTO #MarcaCelular
-FROM [PortalTransparencia].[Consolidado].[Boletins]
+FROM [PortalTransparencia].[Consolidado].[Boletins] -- 364620
 WHERE [marcaCelular] IS NOT NULL
 AND [quantidadeCelular] = 1
 GROUP BY [marcaCelular]
