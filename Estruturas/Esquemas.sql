@@ -1,7 +1,7 @@
 -- ====================================================================================================
 -- Autor: <Anderson Araújo>
 -- Data de criação: <2023-09-28>
--- Data de atualização: <2023-11-11>
+-- Data de atualização: <2023-11-22>
 -- Descrição: <Script para criar o banco e os esquemas>
 -- ====================================================================================================
 
@@ -34,3 +34,6 @@ IF NOT EXISTS (SELECT 1 FROM [sys].[schemas] WHERE [name] = 'Consolidado')
 
 IF NOT EXISTS (SELECT 1 FROM [sys].[schemas] WHERE [name] = 'Exportar')
     EXEC ('CREATE SCHEMA [Exportar]')
+
+IF NOT EXISTS (SELECT 1 FROM [sys].[schemas] WHERE [name] = 'Analise')
+    EXEC ('CREATE SCHEMA [Analise]')
