@@ -32,11 +32,10 @@ OR [marcaCelular] LIKE '%GRAMPRIME%'
 OR [marcaCelular] LIKE '%SMASNUNG%'
 OR [marcaCelular] LIKE '%SASMUNG%'
 OR [marcaCelular] LIKE '%SAUMSGUN%'
---OR [marcaCelular] LIKE '%S[45]%'
+OR [marcaCelular] LIKE '%SMANSUG%'
 OR [marcaCelular] LIKE '%J[12357]%'
 OR [marcaCelular] LIKE '%J [12357]%'
 )
-
 
 UPDATE #MarcaCelular
 SET [novaAtribuicao] = 'HUAWEI'
@@ -138,13 +137,22 @@ OR [marcaCelular] LIKE '%MOTP%'
 OR [marcaCelular] LIKE '%MORTOLORA%'
 OR [marcaCelular] LIKE '%MTO G%'
 OR [marcaCelular] LIKE '%MOPTO%'
+OR [marcaCelular] LIKE '%MOT G%'
 OR [marcaCelular] LIKE '%MOTG%'
+OR [marcaCelular] LIKE '%MOT E%'
 OR [marcaCelular] LIKE '%G4%'
 OR [marcaCelular] LIKE '%FERRARI%'
-OR [marcaCelular] LIKE '%MOTG%'
 OR PATINDEX('%I[0-9][0-9][0-9]%', [marcaCelular]) > 0
 OR PATINDEX('%I-[0-9][0-9][0-9]%', [marcaCelular]) > 0
 OR PATINDEX('%I [0-9][0-9][0-9]%', [marcaCelular]) > 0
+)
+
+UPDATE #MarcaCelular
+SET [novaAtribuicao] = 'QUANTUM'
+WHERE [novaAtribuicao] IS NULL
+AND (
+   [marcaCelular] LIKE '%QUANTUM%'
+OR [marcaCelular] LIKE '%QUANTUN%'
 )
 
 UPDATE #MarcaCelular
@@ -175,9 +183,9 @@ SET [novaAtribuicao] = 'NOKIA'
 WHERE [novaAtribuicao] IS NULL
 AND (
    [marcaCelular] LIKE '%NOK%'
-OR [marcaCelular] LIKE '%NÓK%'
+OR [marcaCelular] LIKE '%NÃ“K%'
 OR [marcaCelular] LIKE '%NOQ%'
-OR [marcaCelular] LIKE '%NÓQ%'
+OR [marcaCelular] LIKE '%NÃ“Q%'
 OR [marcaCelular] LIKE '%NOXIA%'
 OR [marcaCelular] LIKE '%N[OK%'
 OR [marcaCelular] LIKE '%NOQI%'
@@ -251,7 +259,9 @@ OR [marcaCelular] LIKE '%LENNOVO%'
 OR [marcaCelular] LIKE '%LEONOV%'
 OR [marcaCelular] LIKE '%LEVON%'
 OR [marcaCelular] LIKE '%LENEVO%'
+OR [marcaCelular] LIKE '%LENONO%'
 OR [marcaCelular] LIKE '%LNOVO%'
+OR [marcaCelular] LIKE '%LÃŠ NOVO%'
 )
 
 UPDATE #MarcaCelular
@@ -358,6 +368,9 @@ OR [marcaCelular] LIKE '%XIAUME%'
 OR [marcaCelular] LIKE '%REDMI%'
 OR [marcaCelular] LIKE '%RED MI%'
 OR [marcaCelular] LIKE '%MIRAGE%'
+OR [marcaCelular] LIKE '%XAUMI%'
+OR [marcaCelular] LIKE '%XIAMOMI%'
+OR [marcaCelular] LIKE '%XHIAOMI%'
 OR [marcaCelular] = 'MI'
 OR [marcaCelular] = 'MI|'
 OR [marcaCelular] = 'NI'
@@ -517,7 +530,7 @@ OR [marcaCelular] LIKE '%AYFONE%'
 OR [marcaCelular] LIKE '%OFONE%'
 OR [marcaCelular] LIKE '%OPHONE%'
 OR [marcaCelular] LIKE '%I'' PHONE%'
-OR [marcaCelular] LIKE '%I´PHONE%'
+OR [marcaCelular] LIKE '%IÂ´PHONE%'
 OR [marcaCelular] LIKE '%I/PHONE%'
 OR [marcaCelular] LIKE '%ILPHONE%'
 OR [marcaCelular] LIKE '%EPHOL%'
@@ -532,6 +545,7 @@ OR [marcaCelular] LIKE '%I -%'
 OR [marcaCelular] LIKE '%I- %'
 OR [marcaCelular] LIKE '%Y-PH%'
 OR [marcaCelular] LIKE '%I- %'
+OR [marcaCelular] LIKE '%ÃƒPPLE%'
 OR [marcaCelular] LIKE '%A P P L E%'
 )
 
@@ -600,45 +614,45 @@ AND (
 )
 
 UPDATE #MarcaCelular
-SET [novaAtribuicao] = 'MARCA NÃO INFORMADA'
+SET [novaAtribuicao] = 'MARCA NÃƒO INFORMADA'
 WHERE [novaAtribuicao] IS NULL
 AND (
    [marcaCelular] LIKE '%SEM MARCA%'
-OR [marcaCelular] LIKE '%NÃO SABE%'
+OR [marcaCelular] LIKE '%NÃƒO SABE%'
 OR [marcaCelular] LIKE '%NAO SABE%'
-OR [marcaCelular] LIKE '%NÃO SOUBE%'
+OR [marcaCelular] LIKE '%NÃƒO SOUBE%'
 OR [marcaCelular] LIKE '%NAO SOUBE%'
 OR [marcaCelular] LIKE '%NAO RECORDA%'
-OR [marcaCelular] LIKE '%NÃO RECORDA%'
+OR [marcaCelular] LIKE '%NÃƒO RECORDA%'
 OR [marcaCelular] LIKE '%NAO SEI%'
-OR [marcaCelular] LIKE '%NÃO SEI%'
-OR [marcaCelular] LIKE '%NÃO SE RECORDA%'
+OR [marcaCelular] LIKE '%NÃƒO SEI%'
+OR [marcaCelular] LIKE '%NÃƒO SE RECORDA%'
 OR [marcaCelular] LIKE '%NAO SE RECORDA%'
 OR [marcaCelular] LIKE '%NAO LEMBRA%'
-OR [marcaCelular] LIKE '%NÃO LEMBRA%'
-OR [marcaCelular] LIKE 'Ñ'
+OR [marcaCelular] LIKE '%NÃƒO LEMBRA%'
+OR [marcaCelular] LIKE 'Ã‘'
 OR [marcaCelular] LIKE 'N'
 OR [marcaCelular] LIKE '%NAO FORAM INFORMADOS%'
-OR [marcaCelular] LIKE '%NÃO FORAM INFORMADOS%'
-OR [marcaCelular] LIKE '%NÃO LEMBRA%'
-OR [marcaCelular] LIKE '%NÃO INFORMADO%'
-OR [marcaCelular] LIKE '%NAÕ INFORMADO%'
+OR [marcaCelular] LIKE '%NÃƒO FORAM INFORMADOS%'
+OR [marcaCelular] LIKE '%NÃƒO LEMBRA%'
+OR [marcaCelular] LIKE '%NÃƒO INFORMADO%'
+OR [marcaCelular] LIKE '%NAÃƒ INFORMADO%'
 OR [marcaCelular] LIKE '%NAO INFORMADO%'
-OR [marcaCelular] LIKE '%NÂO SE LEMBRA%'
-OR [marcaCelular] LIKE '%NÃO SE LEMBRA%'
+OR [marcaCelular] LIKE '%NÃƒO SE LEMBRA%'
+OR [marcaCelular] LIKE '%NÃƒO SE LEMBRA%'
 OR [marcaCelular] LIKE '%NAO SE LEMBRA%'
-OR [marcaCelular] LIKE '%NÃO CONSTA%'
+OR [marcaCelular] LIKE '%NÃƒO CONSTA%'
 OR [marcaCelular] LIKE '%NAO CONSTA%'
-OR [marcaCelular] LIKE '%NÃO INF%'
+OR [marcaCelular] LIKE '%NÃƒO INF%'
 OR [marcaCelular] LIKE '%NAO INF%'
-OR [marcaCelular] LIKE '%NÃO LEMBRO%'
+OR [marcaCelular] LIKE '%NÃƒO LEMBRO%'
 OR [marcaCelular] LIKE '%NAO LEMBRO%'
-OR [marcaCelular] LIKE '%NÃOINFORMADO%'
+OR [marcaCelular] LIKE '%NÃƒOINFORMADO%'
 OR [marcaCelular] LIKE '%NAOINFORMADO%'
 OR [marcaCelular] LIKE '%IGNORADA%'
 OR [marcaCelular] LIKE '%IGNORADO%'
 OR [marcaCelular] LIKE '%DESCONHECIDA%'
-OR [marcaCelular] LIKE '%NÃO DECLARADA%'
+OR [marcaCelular] LIKE '%NÃƒO DECLARADA%'
 OR [marcaCelular] LIKE '%NAO DECLARADA%'
 OR [marcaCelular] LIKE '%?%'
 OR [marcaCelular] LIKE '%NAO DECLINADA%'
@@ -648,97 +662,99 @@ OR [marcaCelular] LIKE '%S/ MARCA%'
 OR [marcaCelular] LIKE '%S/MARCA%'
 OR [marcaCelular] LIKE '%DESCONHECE%'
 OR [marcaCelular] LIKE '%NAO FORNECIDA%'
-OR [marcaCelular] LIKE '%NÃO FORNECIDA%'
-OR [marcaCelular] LIKE '%NÃO FOI INFORMADA%'
+OR [marcaCelular] LIKE '%NÃƒO FORNECIDA%'
+OR [marcaCelular] LIKE '%NÃƒO FOI INFORMADA%'
 OR [marcaCelular] LIKE '%NAO FOI INFORMADA%'
-OR [marcaCelular] LIKE '%NÃO DEFINIDA%'
+OR [marcaCelular] LIKE '%NÃƒO DEFINIDA%'
 OR [marcaCelular] LIKE '%NAO DEFINIDA%'
 OR [marcaCelular] LIKE '%MARCA DESCONHECIDA%'
-OR [marcaCelular] LIKE '%NÃO SABIDO%'
+OR [marcaCelular] LIKE '%NÃƒO SABIDO%'
 OR [marcaCelular] LIKE '%NAO SABIDO%'
 OR [marcaCelular] LIKE '%N/RECORDA%'
 OR [marcaCelular] LIKE '%N/INFORMADA%'
-OR [marcaCelular] LIKE '%NÃO DECLINADA%'
+OR [marcaCelular] LIKE '%NÃƒO DECLINADA%'
 OR [marcaCelular] LIKE '%NAO DECLINADA%'
 OR [marcaCelular] LIKE '%NAO MENCIONADA%'
-OR [marcaCelular] LIKE '%NÃO MENCIONADA%'
+OR [marcaCelular] LIKE '%NÃƒO MENCIONADA%'
 OR [marcaCelular] LIKE '%NAO DECLINADO%'
-OR [marcaCelular] LIKE '%NÃO DECLINADO%'
-OR [marcaCelular] LIKE '%SEM INFORMAÇÃO%'
+OR [marcaCelular] LIKE '%NÃƒO DECLINADO%'
+OR [marcaCelular] LIKE '%SEM INFORMAÃ‡ÃƒO%'
 OR [marcaCelular] LIKE '%N/CONSTA%'
-OR [marcaCelular] LIKE '%NÃO FOI INFORMADO%'
+OR [marcaCelular] LIKE '%NÃƒO FOI INFORMADO%'
 OR [marcaCelular] LIKE '%NAO FOI INFORMADO%'
-OR [marcaCelular] LIKE '%NÃO FOI INFORMADA%'
+OR [marcaCelular] LIKE '%NÃƒO FOI INFORMADA%'
 OR [marcaCelular] LIKE '%NAO FOI INFORMADA%'
 OR [marcaCelular] LIKE '%N/SABE MARCA%'
 OR [marcaCelular] LIKE '%N/ RECORDA%'
 OR [marcaCelular] LIKE '%N/RECORDA%'
-OR [marcaCelular] LIKE '%Ñ SABE INFORMAR%'
-OR [marcaCelular] LIKE '%NÃO SABÍVEL%'
-OR [marcaCelular] LIKE '%NAO SABÍVEL%'
-OR [marcaCelular] LIKE '%NÃO OBSERVADA%'
+OR [marcaCelular] LIKE '%Ã‘ SABE INFORMAR%'
+OR [marcaCelular] LIKE '%NÃƒO SABÃVEL%'
+OR [marcaCelular] LIKE '%NAO SABÃVEL%'
+OR [marcaCelular] LIKE '%NÃƒO OBSERVADA%'
 OR [marcaCelular] LIKE '%NAO OBSERVADA%'
-OR [marcaCelular] LIKE '%NÃO SABIDA%'
+OR [marcaCelular] LIKE '%NÃƒO SABIDA%'
 OR [marcaCelular] LIKE '%NAO SABIDA%'
-OR [marcaCelular] LIKE '%NÃO FORNECIDO%'
+OR [marcaCelular] LIKE '%NÃƒO FORNECIDO%'
 OR [marcaCelular] LIKE '%NAO FORNECIDO%'
 OR [marcaCelular] LIKE '%INDEFINIDA%'
-OR [marcaCelular] LIKE '%NÃO DECL%'
+OR [marcaCelular] LIKE '%NÃƒO DECL%'
 OR [marcaCelular] LIKE '%NAO DECL%'
 OR [marcaCelular] LIKE '%INCERTA%'
 OR [marcaCelular] LIKE '%INCERTO%'
-OR [marcaCelular] LIKE '%NÃO FORNECIDA%'
+OR [marcaCelular] LIKE '%NÃƒO FORNECIDA%'
 OR [marcaCelular] LIKE '%NAO FORNECIDA%'
 OR [marcaCelular] LIKE '%NAO DECLARADO%'
-OR [marcaCelular] LIKE '%NÃO DECLARADO%'
-OR [marcaCelular] LIKE '%NÃO APARENTE%'
+OR [marcaCelular] LIKE '%NÃƒO DECLARADO%'
+OR [marcaCelular] LIKE '%NÃƒO APARENTE%'
 OR [marcaCelular] LIKE '%NAO APARENTE%'
 OR [marcaCelular] LIKE '%MENCIONADO%'
 OR [marcaCelular] LIKE '%MENCIONADA%'
-OR [marcaCelular] LIKE '%NÃO APURADA%'
+OR [marcaCelular] LIKE '%NÃƒO APURADA%'
 OR [marcaCelular] LIKE '%NAO APURADA%'
-OR [marcaCelular] LIKE '%NÃO REMEMORA%'
+OR [marcaCelular] LIKE '%NÃƒO REMEMORA%'
 OR [marcaCelular] LIKE '%NAO REMEMORA%'
-OR [marcaCelular] LIKE '%Ñ SABE%'
+OR [marcaCelular] LIKE '%Ã‘ SABE%'
 OR [marcaCelular] LIKE '%N SABE%'
-OR [marcaCelular] LIKE '%Ñ LEMBRA%'
+OR [marcaCelular] LIKE '%Ã‘ LEMBRA%'
 OR [marcaCelular] LIKE '%N LEMBRA%'
-OR [marcaCelular] LIKE '%Ñ INFORMADO%'
+OR [marcaCelular] LIKE '%Ã‘ INFORMADO%'
 OR [marcaCelular] LIKE '%N INFORMADO%'
 OR [marcaCelular] LIKE '%DESPROVIDO%'
 OR [marcaCelular] LIKE '%DESPROVIDA%'
-OR [marcaCelular] LIKE '%NÃO SER RECORDA%'
+OR [marcaCelular] LIKE '%NÃƒO SER RECORDA%'
 OR [marcaCelular] LIKE '%NAO SER RECORDA%'
-OR [marcaCelular] LIKE '%SEM INFORMAÇAÕ%'
-OR [marcaCelular] LIKE '%NÃO SE RECODA%'
+OR [marcaCelular] LIKE '%SEM INFORMAÃ‡AÃ•%'
+OR [marcaCelular] LIKE '%NÃƒO SE RECODA%'
 OR [marcaCelular] LIKE '%NAO SE RECODA%'
-OR [marcaCelular] LIKE '%Ñ SABE%'
+OR [marcaCelular] LIKE '%Ã‘ SABE%'
 OR [marcaCelular] LIKE '%N SABE%'
-OR [marcaCelular] LIKE '%Ñ/SABE%'
+OR [marcaCelular] LIKE '%Ã‘/SABE%'
 OR [marcaCelular] LIKE '%N/SABE%'
 OR [marcaCelular] LIKE '%APARENTE%'
-OR [marcaCelular] LIKE '%NÁO INFORMADO%'
+OR [marcaCelular] LIKE '%NÃƒO INFORMADO%'
 OR [marcaCelular] LIKE '%INFORMAR%'
 OR [marcaCelular] LIKE '%RECORDA%'
 OR [marcaCelular] LIKE '%DECLINAR%'
 OR [marcaCelular] LIKE '%RECORDA%'
 OR [marcaCelular] LIKE '%SEM OUTROS DADOS%'
 OR [marcaCelular] LIKE '%POSSUI%'
-OR [marcaCelular] LIKE '%POSSUÍ%'
-OR [marcaCelular] LIKE '%NÃO TEM MARCA%'
+OR [marcaCelular] LIKE '%POSSUÃ%'
+OR [marcaCelular] LIKE '%NÃƒO TEM MARCA%'
 OR [marcaCelular] LIKE '%NAO TEM MARCA%'
 )
 
+/*
 SELECT *
 FROM #MarcaCelular
 WHERE [novaAtribuicao] IS NOT NULL
 ORDER BY [novaAtribuicao], [volume] DESC
 
-/*
+
 SELECT *
 FROM #MarcaCelular
 WHERE [novaAtribuicao] IS NULL
 ORDER BY [novaAtribuicao], [volume] DESC
+
 
 SELECT
     [novaAtribuicao] AS [marcaCelular]
@@ -746,4 +762,47 @@ SELECT
 FROM #MarcaCelular
 GROUP BY [novaAtribuicao]
 ORDER BY SUM([volume]) DESC
+
+
+SELECT
+    RANK() OVER (ORDER BY SUM([volume]) DESC) AS [rank]
+,   [novaAtribuicao] AS [marcaCelular]
+,   SUM([volume]) AS [volume]
+FROM #MarcaCelular
+GROUP BY
+    [novaAtribuicao]
 */
+
+DROP TABLE IF EXISTS [Analise].[RankMarcaCelular];
+WITH MarcaCelularVolume AS (
+    SELECT
+        CASE
+            WHEN [volume] > 1000 AND [novaAtribuicao] IS NOT NULL THEN [novaAtribuicao]
+            ELSE 'OUTROS'
+        END AS [marcaCelular]
+    ,   SUM([volume]) AS [volume]
+    FROM #MarcaCelular
+    GROUP BY
+        CASE
+            WHEN [volume] > 1000 AND [novaAtribuicao] IS NOT NULL THEN [novaAtribuicao]
+            ELSE 'OUTROS'
+        END
+), MarcaCelularRanqueada AS (
+    SELECT
+        ROW_NUMBER() OVER (ORDER BY
+            CASE
+                WHEN [marcaCelular] = 'OUTROS' THEN 1
+                ELSE 0
+            END
+        ,   [volume] DESC
+        ) AS [rank]
+    ,   [marcaCelular]
+    ,   [volume]
+    FROM MarcaCelularVolume
+)
+SELECT
+    [rank]
+,   CONCAT(LEFT([marcaCelular], 1), LOWER(SUBSTRING([marcaCelular], 2, LEN([marcaCelular])))) AS [marcaCelular]
+,   [volume]
+INTO [Analise].[RankMarcaCelular]
+FROM MarcaCelularRanqueada
