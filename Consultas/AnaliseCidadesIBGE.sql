@@ -1,3 +1,4 @@
+USE [PortalTransparencia];
 WITH Resultados AS (
     SELECT
         ROW_NUMBER() OVER (PARTITION BY a.[idCategoria] ORDER BY COUNT(1) DESC) AS [rank]
@@ -15,7 +16,7 @@ WITH Resultados AS (
     ,   CAST(COUNT(1) AS FLOAT) / CAST(b.[populacaoOcupado] AS FLOAT) * 100 AS [boletimPorHabitanteOcupado]
     ,   CAST(COUNT(1) AS FLOAT) / CAST(b.[densidadeDemografica] AS FLOAT) * 100 AS [boletimPorDensidadeDemografica]
     FROM [Consolidado].[Boletins] AS a
-    JOIN [PortalTransparencia].[Depara].[Cidades] AS b
+    JOIN [Depara].[Cidades] AS b
     ON a.[idCidade] = b.[id]
     WHERE a.[dataOcorrencia] >= '2018-01-01'
     GROUP BY
