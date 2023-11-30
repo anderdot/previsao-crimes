@@ -244,7 +244,7 @@ JOIN #TMP_ListarArquivos AS b
     ON b.[idCategoria] = a.[id]
 LEFT JOIN [Registro].[Arquivos] AS c
     ON c.[idCategoria] = a.[id]
-    AND c.[nomeArquivo] <> b.[nomeArquivo]
+    AND c.[nomeArquivo] = b.[nomeArquivo]
 WHERE b.[nomeArquivo] IS NOT NULL
 AND c.[nomeArquivo] IS NULL
 AND b.[nomeArquivo] <> 'Arquivo não encontrado'

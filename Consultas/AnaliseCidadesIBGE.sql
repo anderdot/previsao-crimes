@@ -1,6 +1,12 @@
+USE [PortalTransparencia]
+DROP TABLE IF EXISTS [Analise].[RankGeral];
 WITH Resultados AS (
     SELECT
-        ROW_NUMBER() OVER (PARTITION BY a.[idCategoria] ORDER BY COUNT(1) DESC) AS [rank]
+        ROW_NUMBER() OVER (PARTITION BY a.[idCategoria] ORDER BY COUNT(1) DESC) AS [rankBoletins]
+    ,   ROW_NUMBER() OVER (PARTITION BY a.[idCategoria] ORDER BY CAST(COUNT(1) AS FLOAT) / (CAST(b.[populacaoCenso] AS FLOAT) / 1000) DESC) AS [rankBoletinsPorMilHabitantes]
+    ,   ROW_NUMBER() OVER (PARTITION BY a.[idCategoria] ORDER BY CAST(COUNT(1) AS FLOAT) / (CAST(b.[populacaoOcupado] AS FLOAT) / 1000) DESC) AS [rankBoletinsPorMilHabitantesOcupado]
+    ,   ROW_NUMBER() OVER (PARTITION BY a.[idCategoria] ORDER BY CAST(COUNT(1) AS FLOAT) / CAST(b.[densidadeDemografica] AS FLOAT) DESC) AS [rankBoletinsPorDensidadeDemografica]
+    ,   ROW_NUMBER() OVER (PARTITION BY a.[idCategoria] ORDER BY CAST(b.[idhm] AS FLOAT) DESC) AS [rankIdhm]
     ,   a.[idCategoria]
     ,   a.[categoria]
     ,   a.[idCidade]
@@ -10,12 +16,13 @@ WITH Resultados AS (
     ,   b.[populacaoOcupado]
     ,   b.[porcentagemPopulacaoOcupado]
     ,   b.[densidadeDemografica]
-    ,   COUNT(1) AS [BoletinsRegistrados]
-    ,   CAST(COUNT(1) AS FLOAT) / CAST(b.[populacaoCenso] AS FLOAT) * 100 AS [boletimPorHabitante]
-    ,   CAST(COUNT(1) AS FLOAT) / CAST(b.[populacaoOcupado] AS FLOAT) * 100 AS [boletimPorHabitanteOcupado]
-    ,   CAST(COUNT(1) AS FLOAT) / CAST(b.[densidadeDemografica] AS FLOAT) * 100 AS [boletimPorDensidadeDemografica]
+    ,   b.[idhm]
+    ,   COUNT(1) AS [boletinsRegistrados]
+    ,   CAST(COUNT(1) AS FLOAT) / (CAST(b.[populacaoCenso] AS FLOAT) / 1000) AS [boletimPorMilHabitantes]
+    ,   CAST(COUNT(1) AS FLOAT) / (CAST(b.[populacaoOcupado] AS FLOAT) / 1000) AS [boletimPorMilHabitantesOcupado]
+    ,   CAST(COUNT(1) AS FLOAT) / CAST(b.[densidadeDemografica] AS FLOAT) AS [boletimPorDensidadeDemografica]
     FROM [Consolidado].[Boletins] AS a
-    JOIN [PortalTransparencia].[Depara].[Cidades] AS b
+    JOIN [Depara].[Cidades] AS b
     ON a.[idCidade] = b.[id]
     WHERE a.[dataOcorrencia] >= '2018-01-01'
     GROUP BY
@@ -28,10 +35,15 @@ WITH Resultados AS (
     ,   b.[populacaoOcupado]
     ,   b.[porcentagemPopulacaoOcupado]
     ,   b.[densidadeDemografica]
-), ResultadosRank AS (
+    ,   b.[idhm]
+), MediaRank AS (
     SELECT
-        [rank]
-    ,   LAG([rank]) OVER (PARTITION BY [idCidade] ORDER BY [idCategoria]) AS [rankComparado]
+        AVG([rankBoletins] + [rankBoletinsPorMilHabitantes] + [rankBoletinsPorMilHabitantesOcupado] + [rankBoletinsPorDensidadeDemografica]) / 4 AS [valorRankGeral]
+    ,   [rankBoletins]
+    ,   [rankBoletinsPorMilHabitantes]
+    ,   [rankBoletinsPorMilHabitantesOcupado]
+    ,   [rankBoletinsPorDensidadeDemografica]
+    ,   [rankIdhm]
     ,   [idCategoria]
     ,   [idCidade]
     ,   [categoria]
@@ -41,15 +53,18 @@ WITH Resultados AS (
     ,   [populacaoOcupado]
     ,   [porcentagemPopulacaoOcupado]
     ,   [densidadeDemografica]
-    ,   [BoletinsRegistrados]
-    ,   [boletimPorHabitante]
-    ,   [boletimPorHabitanteOcupado]
+    ,   [idhm]
+    ,   [boletinsRegistrados]
+    ,   [boletimPorMilHabitantes]
+    ,   [boletimPorMilHabitantesOcupado]
     ,   [boletimPorDensidadeDemografica]
     FROM Resultados
-), ResultadosRankNull AS (
-    SELECT
-        [rank]
-    ,   CASE WHEN [rankComparado] IS NULL THEN LAG([rank]) OVER (PARTITION BY [idCidade] ORDER BY [idCategoria] DESC) ELSE [rankComparado] END AS [rankComparado]
+    GROUP BY
+        [rankBoletins]
+    ,   [rankBoletinsPorMilHabitantes]
+    ,   [rankBoletinsPorMilHabitantesOcupado]
+    ,   [rankBoletinsPorDensidadeDemografica]
+    ,   [rankIdhm]
     ,   [idCategoria]
     ,   [idCidade]
     ,   [categoria]
@@ -59,19 +74,127 @@ WITH Resultados AS (
     ,   [populacaoOcupado]
     ,   [porcentagemPopulacaoOcupado]
     ,   [densidadeDemografica]
-    ,   [BoletinsRegistrados]
-    ,   [boletimPorHabitante]
-    ,   [boletimPorHabitanteOcupado]
+    ,   [idhm]
+    ,   [boletinsRegistrados]
+    ,   [boletimPorMilHabitantes]
+    ,   [boletimPorMilHabitantesOcupado]
+    ,   [boletimPorDensidadeDemografica]
+), rankGeral AS (
+    SELECT
+        ROW_NUMBER() OVER (PARTITION BY [idCategoria] ORDER BY [ValorRankGeral]) AS [rankGeral]
+    ,   [valorRankGeral]
+    ,   [rankBoletins]
+    ,   [rankBoletinsPorMilHabitantes]
+    ,   [rankBoletinsPorMilHabitantesOcupado]
+    ,   [rankBoletinsPorDensidadeDemografica]
+    ,   [rankIdhm]
+    ,   [idCategoria]
+    ,   [idCidade]
+    ,   [categoria]
+    ,   [cidade]
+    ,   [areaTerritorio]
+    ,   [populacaoCenso]
+    ,   [populacaoOcupado]
+    ,   [porcentagemPopulacaoOcupado]
+    ,   [densidadeDemografica]
+    ,   [idhm]
+    ,   [boletinsRegistrados]
+    ,   [boletimPorMilHabitantes]
+    ,   [boletimPorMilHabitantesOcupado]
+    ,   [boletimPorDensidadeDemografica]
+    FROM MediaRank
+), ResultadosRank AS (
+    SELECT
+        [rankGeral]
+    ,   LAG([rankGeral]) OVER (PARTITION BY [idCidade] ORDER BY [idCategoria]) AS [rankGeralComparado]
+    ,   [valorRankGeral]
+    ,   [rankBoletins]
+    ,   LAG([rankBoletins]) OVER (PARTITION BY [idCidade] ORDER BY [idCategoria]) AS [rankBoletinsComparado]
+    ,   [rankBoletinsPorMilHabitantes]
+    ,   LAG([rankBoletinsPorMilHabitantes]) OVER (PARTITION BY [idCidade] ORDER BY [idCategoria]) AS [rankBoletinsPorMilHabitantesComparado]
+    ,   [rankBoletinsPorMilHabitantesOcupado]
+    ,   LAG([rankBoletinsPorMilHabitantesOcupado]) OVER (PARTITION BY [idCidade] ORDER BY [idCategoria]) AS [rankBoletinsPorMilHabitantesOcupadoComparado]
+    ,   [rankBoletinsPorDensidadeDemografica]
+    ,   LAG([rankBoletinsPorDensidadeDemografica]) OVER (PARTITION BY [idCidade] ORDER BY [idCategoria]) AS [rankBoletinsPorDensidadeDemograficaComparado]
+    ,   [rankIdhm]
+    ,   [idCategoria]
+    ,   [idCidade]
+    ,   [categoria]
+    ,   [cidade]
+    ,   [areaTerritorio]
+    ,   [populacaoCenso]
+    ,   [populacaoOcupado]
+    ,   [porcentagemPopulacaoOcupado]
+    ,   [densidadeDemografica]
+    ,   [idhm]
+    ,   [boletinsRegistrados]
+    ,   [boletimPorMilHabitantes]
+    ,   [boletimPorMilHabitantesOcupado]
+    ,   [boletimPorDensidadeDemografica]
+    FROM rankGeral
+), ResultadosRankNull AS (
+    SELECT
+        [rankGeral]
+    ,   CASE WHEN [rankGeralComparado] IS NULL THEN LAG([rankGeral]) OVER (PARTITION BY [idCidade] ORDER BY [idCategoria] DESC) ELSE [rankGeralComparado] END AS [rankGeralComparado]
+    ,   [ValorRankGeral]
+    ,   [rankBoletins]
+    ,   CASE WHEN [rankBoletinsComparado] IS NULL THEN LAG([rankBoletins]) OVER (PARTITION BY [idCidade] ORDER BY [idCategoria] DESC) ELSE [rankBoletinsComparado] END AS [rankBoletinsComparado]
+    ,   [rankBoletinsPorMilHabitantes]
+    ,   CASE WHEN [rankBoletinsPorMilHabitantesComparado] IS NULL THEN LAG([rankBoletinsPorMilHabitantes]) OVER (PARTITION BY [idCidade] ORDER BY [idCategoria] DESC) ELSE [rankBoletinsPorMilHabitantesComparado] END AS [rankBoletinsPorMilHabitantesComparado]
+    ,   [rankBoletinsPorMilHabitantesOcupado]
+    ,   CASE WHEN [rankBoletinsPorMilHabitantesOcupadoComparado] IS NULL THEN LAG([rankBoletinsPorMilHabitantesOcupado]) OVER (PARTITION BY [idCidade] ORDER BY [idCategoria] DESC) ELSE [rankBoletinsPorMilHabitantesOcupadoComparado] END AS [rankBoletinsPorMilHabitantesOcupadoComparado]
+    ,   [rankBoletinsPorDensidadeDemografica]
+    ,   CASE WHEN [rankBoletinsPorDensidadeDemograficaComparado] IS NULL THEN LAG([rankBoletinsPorDensidadeDemografica]) OVER (PARTITION BY [idCidade] ORDER BY [idCategoria] DESC) ELSE [rankBoletinsPorDensidadeDemograficaComparado] END AS [rankBoletinsPorDensidadeDemograficaComparado]
+    ,   [rankIdhm]
+    ,   [idCategoria]
+    ,   [idCidade]
+    ,   [categoria]
+    ,   [cidade]
+    ,   [areaTerritorio]
+    ,   [populacaoCenso]
+    ,   [populacaoOcupado]
+    ,   [porcentagemPopulacaoOcupado]
+    ,   [densidadeDemografica]
+    ,   [idhm]
+    ,   [boletinsRegistrados]
+    ,   [boletimPorMilHabitantes]
+    ,   [boletimPorMilHabitantesOcupado]
     ,   [boletimPorDensidadeDemografica]
     FROM ResultadosRank
 )
 SELECT
-    [rank]
+    [rankGeral]
 ,   CASE
-        WHEN [rank] - [rankComparado] = 0 THEN 'Manteve'
-        WHEN [rank] - [rankComparado] < 0 THEN CONCAT('Subiu ', ([rank] - [rankComparado]) * -1, ' posições')
-        WHEN [rank] - [rankComparado] > 0 THEN CONCAT('Desceu ', [rank] - [rankComparado], ' posições')
-    END AS [mudancaRank]
+        WHEN [rankGeral] - [rankGeralComparado] = 0 THEN 'Manteve'
+        WHEN [rankGeral] - [rankGeralComparado] < 0 THEN CONCAT('Subiu ', ([rankGeral] - [rankGeralComparado]) * -1, ' posições')
+        WHEN [rankGeral] - [rankGeralComparado] > 0 THEN CONCAT('Desceu ', [rankGeral] - [rankGeralComparado], ' posições')
+    END AS [mudancaRankGeral]
+,   [ValorRankGeral]
+,   [rankBoletins]
+,   CASE
+        WHEN [rankBoletins] - [rankBoletinsComparado] = 0 THEN 'Manteve'
+        WHEN [rankBoletins] - [rankBoletinsComparado] < 0 THEN CONCAT('Subiu ', ([rankBoletins] - [rankBoletinsComparado]) * -1, ' posições')
+        WHEN [rankBoletins] - [rankBoletinsComparado] > 0 THEN CONCAT('Desceu ', [rankBoletins] - [rankBoletinsComparado], ' posições')
+    END AS [mudancaRankBoletins]
+,   [rankBoletinsPorMilHabitantes]
+,   CASE
+        WHEN [rankBoletinsPorMilHabitantes] - [rankBoletinsPorMilHabitantesComparado] = 0 THEN 'Manteve'
+        WHEN [rankBoletinsPorMilHabitantes] - [rankBoletinsPorMilHabitantesComparado] < 0 THEN CONCAT('Subiu ', ([rankBoletinsPorMilHabitantes] - [rankBoletinsPorMilHabitantesComparado]) * -1, ' posições')
+        WHEN [rankBoletinsPorMilHabitantes] - [rankBoletinsPorMilHabitantesComparado] > 0 THEN CONCAT('Desceu ', [rankBoletinsPorMilHabitantes] - [rankBoletinsPorMilHabitantesComparado], ' posições')
+    END AS [mudancaRankBoletinsPorMilHabitantes]
+,   [rankBoletinsPorMilHabitantesOcupado]
+,   CASE
+        WHEN [rankBoletinsPorMilHabitantesOcupado] - [rankBoletinsPorMilHabitantesOcupadoComparado] = 0 THEN 'Manteve'
+        WHEN [rankBoletinsPorMilHabitantesOcupado] - [rankBoletinsPorMilHabitantesOcupadoComparado] < 0 THEN CONCAT('Subiu ', ([rankBoletinsPorMilHabitantesOcupado] - [rankBoletinsPorMilHabitantesOcupadoComparado]) * -1, ' posições')
+        WHEN [rankBoletinsPorMilHabitantesOcupado] - [rankBoletinsPorMilHabitantesOcupadoComparado] > 0 THEN CONCAT('Desceu ', [rankBoletinsPorMilHabitantesOcupado] - [rankBoletinsPorMilHabitantesOcupadoComparado], ' posições')
+    END AS [mudancaRankBoletinsPorMilHabitantesOcupado]
+,   [rankBoletinsPorDensidadeDemografica]
+,   CASE
+        WHEN [rankBoletinsPorDensidadeDemografica] - [rankBoletinsPorDensidadeDemograficaComparado] = 0 THEN 'Manteve'
+        WHEN [rankBoletinsPorDensidadeDemografica] - [rankBoletinsPorDensidadeDemograficaComparado] < 0 THEN CONCAT('Subiu ', ([rankBoletinsPorDensidadeDemografica] - [rankBoletinsPorDensidadeDemograficaComparado]) * -1, ' posições')
+        WHEN [rankBoletinsPorDensidadeDemografica] - [rankBoletinsPorDensidadeDemograficaComparado] > 0 THEN CONCAT('Desceu ', [rankBoletinsPorDensidadeDemografica] - [rankBoletinsPorDensidadeDemograficaComparado], ' posições')
+    END AS [mudancaRankBoletinsPorDensidadeDemografica]
+,   [rankIdhm]
 ,   [idCategoria]
 ,   [idCidade]
 ,   [categoria]
@@ -81,12 +204,43 @@ SELECT
 ,   [populacaoOcupado]
 ,   [porcentagemPopulacaoOcupado]
 ,   [densidadeDemografica]
-,   [BoletinsRegistrados]
-,   [boletimPorHabitante]
-,   [boletimPorHabitanteOcupado]
+,   [idhm]
+,   [boletinsRegistrados]
+,   [boletimPorMilHabitantes]
+,   [boletimPorMilHabitantesOcupado]
 ,   [boletimPorDensidadeDemografica]
+INTO [Analise].[RankGeral]
 FROM ResultadosRankNull
-WHERE [rank] <= 10
 ORDER BY
     [idCategoria]
-,   [rank]
+,   [rankBoletinsPorDensidadeDemografica]
+
+SELECT
+    [rankGeral]
+,   [mudancaRankGeral]
+,   [ValorRankGeral]
+,   [rankBoletins]
+,   [mudancaRankBoletins]
+,   [rankBoletinsPorMilHabitantes]
+,   [mudancaRankBoletinsPorMilHabitantes]
+,   [rankBoletinsPorMilHabitantesOcupado]
+,   [mudancaRankBoletinsPorMilHabitantesOcupado]
+,   [rankBoletinsPorDensidadeDemografica]
+,   [mudancaRankBoletinsPorDensidadeDemografica]
+,   [rankIdhm]
+,   [idCategoria]
+,   [idCidade]
+,   [categoria]
+,   [cidade]
+,   [areaTerritorio]
+,   [populacaoCenso]
+,   [populacaoOcupado]
+,   [porcentagemPopulacaoOcupado]
+,   [densidadeDemografica]
+,   [idhm]
+,   [boletinsRegistrados]
+,   [boletimPorMilHabitantes]
+,   [boletimPorMilHabitantesOcupado]
+,   [boletimPorDensidadeDemografica]
+FROM [Analise].[RankGeral]
+ORDER BY [idCategoria], [rankGeral]
